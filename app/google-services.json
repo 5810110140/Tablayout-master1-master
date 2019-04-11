@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1047971601249",
+    "firebase_url": "https://mushroombox-e1cbc.firebaseio.com",
+    "project_id": "mushroombox-e1cbc",
+    "storage_bucket": "mushroombox-e1cbc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1047971601249:android:8b066bbf7bcf1f82",
+        "android_client_info": {
+          "package_name": "com.codingdemos.tablayout"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1047971601249-307aci6eq9p58uqp8k9v8lka6ibb1hrl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.codingdemos.tablayout",
+            "certificate_hash": "4b284b7a46b9f15ecc4366f34c7c572e0a58ba93"
+          }
+        },
+        {
+          "client_id": "1047971601249-f9s0ji5180820suna00ocvo669820lm7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBijWEwozzcLknKPnOOYS6Thmgv0PXgM8I"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1047971601249-f9s0ji5180820suna00ocvo669820lm7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
