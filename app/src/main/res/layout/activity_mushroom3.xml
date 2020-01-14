@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/guide1"
-    tools:context=".mushroom3"
+    tools:context="com.codingdemos.tablayout.mushroom3"
     android:orientation="vertical">
 
     <RelativeLayout

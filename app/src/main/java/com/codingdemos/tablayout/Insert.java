@@ -48,7 +48,7 @@ public class Insert extends AppCompatActivity {
                         public void onDateSet(DatePicker view, int mYear, int mMonth, int mDay) {
                             mTdate.setText(mDay + "/" + (mMonth+1)+ "/" + mYear);
                         }
-                    },day, month, year);
+                    },year, month, day);
                     dpd.show();
                 }
             });

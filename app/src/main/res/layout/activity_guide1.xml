@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:id="@+id/guide1"
-    tools:context=".Guide1"
+    tools:context="com.codingdemos.tablayout.Guide1"
     tools:ignore="InvalidId">
 
     <RelativeLayout

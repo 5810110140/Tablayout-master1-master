@@ -1,9 +1,11 @@
 package com.codingdemos.tablayout;
 
+import android.annotation.SuppressLint;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.TabItem;
 import android.support.design.widget.TabLayout;
 import android.support.v4.content.ContextCompat;
@@ -14,9 +16,17 @@ import android.view.MenuItem;
 import android.view.Menu;
 import android.widget.ScrollView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.Map;
 
 import lecho.lib.hellocharts.view.LineChartView;
 
@@ -33,6 +43,9 @@ public class MainActivity extends AppCompatActivity {
     TabItem tabcontrol;
     TabItem tabdata;
     LineChartView chart;
+  //  private TextView temperaturevalue;
+   // DatabaseReference tempRef;
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -60,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
         }
         return MainActivity.super.onOptionsItemSelected(item);
     }
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -71,16 +85,36 @@ public class MainActivity extends AppCompatActivity {
         ll.setOrientation(LinearLayout.VERTICAL);
         sv.addView(ll);
 
-        toolbar = findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle(getResources().getString(R.string.app_name));
         setSupportActionBar(toolbar);
 
-        tabLayout = findViewById(R.id.tablayout);
-        tabstatus = findViewById(R.id.tabstatus);
-        tabcontrol = findViewById(R.id.tabcontrol);
-        tabdata = findViewById(R.id.tabdata);
-        viewPager = findViewById(R.id.viewPager);
-        chart = findViewById(R.id.chart);
+        tabLayout = (TabLayout) findViewById(R.id.tablayout);
+        tabstatus = (TabItem) findViewById(R.id.tabstatus);
+        tabcontrol = (TabItem) findViewById(R.id.tabcontrol);
+        tabdata = (TabItem) findViewById(R.id.tabdata);
+        viewPager = (ViewPager) findViewById(R.id.viewPager);
+        chart = (LineChartView) findViewById(R.id.chart);
+
+        //get value from firebase อ่านค่าจากไฟล์ Firebase
+
+       // FirebaseDatabase database = FirebaseDatabase.getInstance();
+       // temperaturevalue = (TextView) findViewById(R.id.datatemperature);
+       // tempRef = database.getReference();
+
+      //  tempRef.addValueEventListener(new ValueEventListener() {
+        //    @Override
+        //    public void onDataChange( DataSnapshot dataSnapshot) {
+        //       Map map =(Map)dataSnapshot.getValue();
+        //       String value = String.valueOf(map.get("Valuetemp"));
+        //        temperaturevalue.setText(value);
+        //    }
+
+         //   @Override
+        //    public void onCancelled( DatabaseError databaseError) {
+
+        //    }
+     //   });
 
 
         Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -137,6 +171,8 @@ public class MainActivity extends AppCompatActivity {
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
 
     }
+
+
 
     private void showNotication() {
         Notification.InboxStyle style = new Notification.InboxStyle()
