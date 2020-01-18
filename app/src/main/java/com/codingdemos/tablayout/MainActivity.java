@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
     TabItem tabdata;
     LineChartView chart;
   //  private TextView temperaturevalue;
-   // DatabaseReference tempRef;
+  //  DatabaseReference tempRef;
 
 
     @Override
@@ -98,23 +98,23 @@ public class MainActivity extends AppCompatActivity {
 
         //get value from firebase อ่านค่าจากไฟล์ Firebase
 
-       // FirebaseDatabase database = FirebaseDatabase.getInstance();
-       // temperaturevalue = (TextView) findViewById(R.id.datatemperature);
-       // tempRef = database.getReference();
+      /*  FirebaseDatabase database = FirebaseDatabase.getInstance();
+        temperaturevalue = (TextView) findViewById(R.id.datatemperature);
+        tempRef = database.getReference();
 
-      //  tempRef.addValueEventListener(new ValueEventListener() {
-        //    @Override
-        //    public void onDataChange( DataSnapshot dataSnapshot) {
-        //       Map map =(Map)dataSnapshot.getValue();
-        //       String value = String.valueOf(map.get("Valuetemp"));
-        //        temperaturevalue.setText(value);
-        //    }
+        tempRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange( DataSnapshot dataSnapshot) {
+              Map map =(Map)dataSnapshot.getValue();
+              String value = String.valueOf(map.get("Valuetemp"));
+             temperaturevalue.setText(value);
+            }
 
-         //   @Override
-        //    public void onCancelled( DatabaseError databaseError) {
+            @Override
+            public void onCancelled( DatabaseError databaseError) {
 
-        //    }
-     //   });
+            }
+        }); */
 
 
         Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);

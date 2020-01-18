@@ -2,6 +2,7 @@ package com.codingdemos.tablayout;
 
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -34,12 +35,43 @@ public class StatusFragment extends Fragment {
 
 
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
         setHasOptionsMenu(true);
-        return inflater.inflate(R.layout.fragment_control, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_control, container, false);
+         temperaturevalue= (TextView) rootView.findViewById(R.id.datatemperature);
+
+        //get value from firebase อ่านค่าจากไฟล์ Firebase
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        tempRef = database.getReference();
+        //temperaturevalue =getView().findViewById(R.id.datatemperature);
+
+        tempRef.addValueEventListener(new ValueEventListener() {
+
+
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                
+                Map map = (Map)dataSnapshot.getValue();
+                Map map1 = (Map)dataSnapshot.child("Valuetemp1").getValue();
+               String temp = String.valueOf(map1.get("temp"));
+               temperaturevalue.setText(temp);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+
+
+            }
+        });
+
+
+        return  rootView;
 
     }
     @Override
@@ -51,16 +83,14 @@ public class StatusFragment extends Fragment {
         return true;
     }
 
-     @Override
-    public void onCreate( Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+   //  @Override
+   // public void onCreate( Bundle savedInstanceState) {
+   //     super.onCreate(savedInstanceState);
 
         //get value from firebase อ่านค่าจากไฟล์ Firebase
-        temperaturevalue=getView().findViewById(R.id.datatemperature);
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
+      /*  FirebaseDatabase database = FirebaseDatabase.getInstance();
         tempRef = database.getReference();
-
-
+        temperaturevalue=getView().findViewById(R.id.datatemperature);
 
         tempRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -74,8 +104,8 @@ public class StatusFragment extends Fragment {
             public void onCancelled( DatabaseError databaseError) {
 
             }
-        });
+        }); */
     }
 
 
-}
+//}
