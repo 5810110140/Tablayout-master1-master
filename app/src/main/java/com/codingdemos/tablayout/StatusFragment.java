@@ -31,6 +31,7 @@ import java.util.Map;
 public class StatusFragment extends Fragment {
 
     private TextView temperaturevalue;
+    private TextView humidityvalue;
     private DatabaseReference tempRef;
 
 
@@ -42,24 +43,33 @@ public class StatusFragment extends Fragment {
         // Inflate the layout for this fragment
 
         setHasOptionsMenu(true);
-        View rootView = inflater.inflate(R.layout.fragment_control, container, false);
-         temperaturevalue= (TextView) rootView.findViewById(R.id.datatemperature);
+        View rootView = inflater.inflate(R.layout.fragment_status, container, false);
+
+
+        humidityvalue = rootView.findViewById(R.id.datahumidity);
+         temperaturevalue= rootView.findViewById(R.id.datatemperature);
 
         //get value from firebase อ่านค่าจากไฟล์ Firebase
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         tempRef = database.getReference();
-        //temperaturevalue =getView().findViewById(R.id.datatemperature);
+
 
         tempRef.addValueEventListener(new ValueEventListener() {
 
 
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                
+                //รับค่าจาก Fire base
                 Map map = (Map)dataSnapshot.getValue();
                 Map map1 = (Map)dataSnapshot.child("Valuetemp1").getValue();
                String temp = String.valueOf(map1.get("temp"));
-               temperaturevalue.setText(temp);
+               String humid = String.valueOf(map1.get("humid"));
+
+
+               // update UI
+               temperaturevalue.setText(temp +"°C");
+               humidityvalue.setText(humid + "%RH");
+
             }
 
             @Override

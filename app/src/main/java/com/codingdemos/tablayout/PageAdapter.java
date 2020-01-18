@@ -22,9 +22,9 @@ public class PageAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                return new ControlFragment();
-            case 1:
                 return new StatusFragment();
+            case 1:
+                return new ControlFragment();
             case 2:
                 return new DataFragment();
             default:

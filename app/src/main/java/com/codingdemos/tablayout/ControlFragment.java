@@ -22,7 +22,7 @@ public class ControlFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         setHasOptionsMenu(true);
-        return inflater.inflate(R.layout.fragment_status, container, false);
+        return inflater.inflate(R.layout.fragment_control, container, false);
     }
 
 
