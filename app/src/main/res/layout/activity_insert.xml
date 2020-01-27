@@ -18,53 +18,106 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="60dp"
-
             android:layout_gravity="center_vertical"
             android:background="#DFF2FA"
+            android:gravity="center_horizontal"
             android:text="บันทึกการเพาะปลูก"
             android:textAlignment="center"
             android:textColor="#000000"
             android:textSize="35sp" />
 
     </RelativeLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="250dp"
         android:layout_marginTop="6dp"
         android:orientation="vertical">
 
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="46dp"
+            android:layout_below="@+id/spinner2"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="39dp"
+            android:layout_marginLeft="39dp"
+            android:layout_marginTop="18dp"
+            android:entries="@array/mushroom" />
+
         <Spinner
             android:id="@+id/spinner2"
-            android:layout_width="200dp"
-            android:layout_height="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="46dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginStart="34dp"
-            android:layout_marginLeft="34dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginStart="38dp"
+            android:layout_marginLeft="38dp"
+            android:layout_marginTop="19dp"
             android:entries="@array/mushroom" />
+
+        <Spinner
+            android:id="@+id/spinner3"
+            android:layout_width="wrap_content"
+            android:layout_height="46dp"
+            android:layout_below="@+id/spinner"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="39dp"
+            android:layout_marginLeft="39dp"
+            android:layout_marginTop="12dp"
+            android:entries="@array/mushroom" />
+
+        <Spinner
+            android:id="@+id/spinner4"
+            android:layout_width="192dp"
+            android:layout_height="44dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="22dp"
+            android:layout_marginEnd="99dp"
+            android:layout_marginRight="99dp"
+            android:entries="@array/Total" />
+
+
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp">
+        android:layout_height="80dp">
 
         <Button
             android:id="@+id/btndate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
             android:layout_gravity="center"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="246dp"
+            android:layout_marginRight="246dp"
             android:text="เลือกวันที่" />
 
         <TextView
             android:id="@+id/textdate"
-            android:layout_width="wrap_content"
+            android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/btndate"
-            android:layout_centerHorizontal="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
             android:layout_gravity="center"
+            android:layout_marginStart="33dp"
+            android:layout_marginLeft="33dp"
+            android:layout_marginTop="-41dp"
+            android:layout_marginEnd="53dp"
+            android:layout_marginRight="53dp"
+            android:layout_toStartOf="@+id/btndate"
+            android:layout_toLeftOf="@+id/btndate"
             android:text="Date"
             android:textSize="20sp" />
     </RelativeLayout>
@@ -78,20 +131,34 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
             android:layout_gravity="center"
-            android:text="เลือกเวลา"/>
+            android:layout_marginStart="62dp"
+            android:layout_marginLeft="62dp"
+            android:layout_marginTop="2dp"
+            android:layout_toEndOf="@+id/texttime"
+            android:layout_toRightOf="@+id/texttime"
+            android:text="เลือกเวลา" />
 
         <TextView
             android:id="@+id/texttime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/btntime"
-            android:layout_centerHorizontal="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
             android:layout_gravity="center"
+            android:layout_marginStart="34dp"
+            android:layout_marginLeft="34dp"
+            android:layout_marginTop="14dp"
             android:text="Time"
-            android:textSize="20sp"/>
+            android:textSize="20sp" />
 
     </RelativeLayout>
+
+    <Button
+        android:id="@+id/return1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ย้อนกลับ" />
 
 </LinearLayout>

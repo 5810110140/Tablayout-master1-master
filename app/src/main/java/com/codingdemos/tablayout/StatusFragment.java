@@ -32,6 +32,7 @@ public class StatusFragment extends Fragment {
 
     private TextView temperaturevalue;
     private TextView humidityvalue;
+    private TextView lightvalue;
     private DatabaseReference tempRef;
 
 
@@ -48,6 +49,7 @@ public class StatusFragment extends Fragment {
 
         humidityvalue = rootView.findViewById(R.id.datahumidity);
          temperaturevalue= rootView.findViewById(R.id.datatemperature);
+         lightvalue = rootView.findViewById(R.id.datalight);
 
         //get value from firebase อ่านค่าจากไฟล์ Firebase
         FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -64,11 +66,14 @@ public class StatusFragment extends Fragment {
                 Map map1 = (Map)dataSnapshot.child("Valuetemp1").getValue();
                String temp = String.valueOf(map1.get("temp"));
                String humid = String.valueOf(map1.get("humid"));
+               String light = String.valueOf(map1.get("light"));
 
 
                // update UI
                temperaturevalue.setText(temp +"°C");
-               humidityvalue.setText(humid + "%RH");
+               humidityvalue.setText(humid +" %RH");
+               lightvalue.setText(light+" Lux");
+
 
             }
 

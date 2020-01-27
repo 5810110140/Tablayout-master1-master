@@ -3,6 +3,7 @@ package com.codingdemos.tablayout;
 import android.app.DatePickerDialog;
 
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -69,5 +70,18 @@ public class Insert extends AppCompatActivity {
                 }
             });
 
+            Button Return = findViewById(R.id.return1);
+            Return.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    System.out.print("ย้อนกลับ");
+                    openDataFragment();
+                }
+            });
+
+        }
+        public  void openDataFragment(){
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
         }
 }

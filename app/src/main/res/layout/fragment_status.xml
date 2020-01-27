@@ -33,8 +33,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_gravity="center_horizontal"
-            android:layout_marginStart="21dp"
-            android:layout_marginLeft="21dp"
+            android:layout_marginStart="68dp"
+            android:layout_marginLeft="68dp"
             android:layout_marginTop="29dp"
             android:layout_toEndOf="@+id/weather"
             android:layout_toRightOf="@+id/weather"
@@ -97,8 +97,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_gravity="center_horizontal"
-            android:layout_marginStart="17dp"
-            android:layout_marginLeft="17dp"
+            android:layout_marginStart="42dp"
+            android:layout_marginLeft="42dp"
             android:layout_marginTop="37dp"
             android:layout_toEndOf="@+id/temperature"
             android:layout_toRightOf="@+id/temperature"
@@ -108,29 +108,32 @@
 
         <TextView
             android:id="@+id/datatemperature"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_width="197dp"
+            android:layout_height="96dp"
             android:layout_alignParentTop="true"
             android:layout_gravity="center_horizontal"
-            android:layout_marginStart="29dp"
-            android:layout_marginLeft="29dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="3dp"
             android:layout_toEndOf="@+id/temperaturepic"
             android:layout_toRightOf="@+id/temperaturepic"
+            android:autoSizeTextType="uniform"
+            android:gravity="center"
             android:text="--"
-            android:textSize="35dp" />
+            android:textSize="35sp" />
 
-         <!--<TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="20dp"
-            android:layout_toEndOf="@+id/datatemperature"
-            android:layout_toRightOf="@+id/datatemperature"
-            android:text="°C"
-            android:textColor="	#000000"
-            android:textSize="50dp" /> -->
+        <!--<TextView
+           android:layout_width="wrap_content"
+           android:layout_height="match_parent"
+           android:layout_marginStart="16dp"
+           android:layout_marginLeft="16dp"
+           android:layout_marginTop="15dp"
+           android:layout_marginBottom="20dp"
+           android:layout_toEndOf="@+id/datatemperature"
+           android:layout_toRightOf="@+id/datatemperature"
+           android:text="°C"
+           android:textColor="	#000000"
+           android:textSize="50dp" /> -->
     </RelativeLayout>
 
     <RelativeLayout
@@ -154,42 +157,45 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_gravity="center_horizontal"
-            android:layout_marginStart="19dp"
-            android:layout_marginLeft="68dp"
-            android:layout_marginTop="35dp"
-            android:textSize="20dp"
+            android:layout_marginStart="66dp"
+            android:layout_marginLeft="66dp"
+            android:layout_marginTop="37dp"
             android:layout_toEndOf="@+id/humidity"
             android:layout_toRightOf="@+id/humidity"
             android:text="Humidity"
-            android:textColor="	#000000"/>
+            android:textColor="	#000000"
+            android:textSize="20dp" />
 
         <TextView
             android:id="@+id/datahumidity"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_width="189dp"
+            android:layout_height="99dp"
             android:layout_alignParentTop="true"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginStart="45dp"
-            android:layout_marginLeft="51dp"
-            android:layout_marginTop="0dp"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="23dp"
+            android:layout_marginLeft="23dp"
+            android:layout_marginTop="5dp"
             android:layout_toEndOf="@+id/humiditytext"
             android:layout_toRightOf="@+id/humiditytext"
+            android:autoSizeTextType="uniform"
+            android:gravity="center"
             android:text="--"
-            android:textSize="35dp" />
+            android:textSize="35sp" />
 
-      <!--  <TextView
-            android:layout_width="63dp"
-            android:layout_height="60dp"
-            android:layout_alignParentTop="true"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="25dp"
-            android:layout_toEndOf="@+id/datahumidity"
-            android:layout_toRightOf="@+id/datahumidity"
-            android:text="%RH"
-            android:textColor="	#000000"
-            android:textSize="30dp" /> -->
+        <!--  <TextView
+              android:layout_width="63dp"
+              android:layout_height="60dp"
+              android:layout_alignParentTop="true"
+              android:layout_gravity="center_horizontal"
+              android:layout_marginStart="16dp"
+              android:layout_marginLeft="16dp"
+              android:layout_marginTop="25dp"
+              android:layout_toEndOf="@+id/datahumidity"
+              android:layout_toRightOf="@+id/datahumidity"
+              android:text="%RH"
+              android:textColor="	#000000"
+              android:textSize="30dp" /> -->
 
     </RelativeLayout>
 
@@ -199,58 +205,60 @@
         android:orientation="horizontal"
         android:background="#DFF2FA"
         android:layout_marginTop="6dp">
-        
+
         <ImageView
             android:id="@+id/picsunny"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:layout_marginTop="20dp"
             android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
-            android:src="@drawable/sun1"/>
+            android:src="@drawable/sun1" />
 
         <TextView
             android:id="@+id/textlight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:gravity="center_horizontal"
-            android:layout_marginStart="19dp"
-            android:layout_marginLeft="68dp"
-            android:layout_marginTop="35dp"
+            android:layout_marginStart="88dp"
+            android:layout_marginLeft="88dp"
+            android:layout_marginTop="37dp"
             android:layout_toEndOf="@id/picsunny"
             android:layout_toRightOf="@id/picsunny"
+            android:gravity="center_horizontal"
             android:text="Light"
-            android:textSize="20dp"
-            android:textColor="#000000"/>
+            android:textColor="#000000"
+            android:textSize="20dp" />
 
         <TextView
             android:id="@+id/datalight"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_width="187dp"
+            android:layout_height="94dp"
             android:layout_alignParentTop="true"
             android:layout_gravity="center_horizontal"
-            android:layout_marginStart="81dp"
-            android:layout_marginLeft="81dp"
-            android:layout_marginTop="0dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="2dp"
             android:layout_toEndOf="@+id/textlight"
             android:layout_toRightOf="@+id/textlight"
+            android:autoSizeTextType="uniform"
+            android:gravity="center"
             android:text="--"
-            android:textSize="60dp" />
+            android:textSize="35dp" />
 
-     <!--   <TextView
-            android:layout_width="63dp"
-            android:layout_height="60dp"
-            android:layout_alignParentTop="true"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginStart="21dp"
-            android:layout_marginLeft="21dp"
-            android:layout_marginTop="25dp"
-            android:layout_toEndOf="@+id/datalight"
-            android:layout_toRightOf="@+id/datalight"
-            android:text="Lux"
-            android:textColor="	#000000"
-            android:textSize="30dp" />  -->
+        <!--   <TextView
+               android:layout_width="63dp"
+               android:layout_height="60dp"
+               android:layout_alignParentTop="true"
+               android:layout_gravity="center_horizontal"
+               android:layout_marginStart="21dp"
+               android:layout_marginLeft="21dp"
+               android:layout_marginTop="25dp"
+               android:layout_toEndOf="@+id/datalight"
+               android:layout_toRightOf="@+id/datalight"
+               android:text="Lux"
+               android:textColor="	#000000"
+               android:textSize="30dp" />  -->
 
 
 

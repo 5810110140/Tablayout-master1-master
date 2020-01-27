@@ -23,6 +23,20 @@
         <item>เห็ดโคนญี่ปุ่น</item>
     </array>
 
+    <array name="Total">
+        <item>จำนวนก้อน</item>
+        <item>1 ก้อน</item>
+        <item>1 ก้อน</item>
+        <item>2 ก้อน</item>
+        <item>3 ก้อน</item>
+        <item>4 ก้อน</item>
+        <item>5 ก้อน</item>
+        <item>6 ก้อน</item>
+        <item>7 ก้อน</item>
+        <item>8 ก้อน</item>
+
+    </array>
+
     <string name="mush1">ความรู้ทั่วไปของเห็ด</string>
     <string name="IndianOyster">เห็ดนางฟ้า</string>
     <string name="title1">
@@ -77,4 +91,5 @@
         "ความชื้นที่ต้องการ 80-90 % \n" "แสงที่ต้องการ น้อย \n" "ระยะเวลาในการบ่ม 1.5-2 เดือน"
     </string>
     <string name="taxttemp">--</string>
+    <string name="setting">Setting</string>
 </resources>
