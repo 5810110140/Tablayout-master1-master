@@ -11,10 +11,9 @@
   <RelativeLayout
       android:id="@+id/layoutpipe"
       android:layout_width="match_parent"
-      android:layout_height="100dp"
+      android:layout_height="100sp"
       android:background="#DFF2FA"
       android:orientation="horizontal"
-      android:layout_alignParentTop="true"
       android:layout_marginTop="8dp"
       >
 
@@ -24,18 +23,20 @@
         android:layout_height="60dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="24dp"
+        android:layout_marginLeft="27dp"
         android:layout_marginTop="26dp"
-        android:src="@drawable/pipes" />
+        android:src="@drawable/pipes"
+        android:contentDescription="TODO" />
 
     <TextView
         android:id="@+id/textwaterpipe"
-        android:layout_width="106dp"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:layout_alignParentTop="true"
         android:layout_gravity="center_horizontal"
-        android:layout_marginStart="38dp"
-        android:layout_marginLeft="38dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
         android:layout_marginTop="39dp"
         android:layout_toEndOf="@+id/picpipe"
         android:layout_toRightOf="@+id/picpipe"
@@ -46,19 +47,15 @@
 
     <ToggleButton
         android:id="@+id/toggleButtonpipe"
-        android:layout_width="125dp"
-        android:layout_height="61dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginStart="43dp"
-        android:layout_marginLeft="43dp"
-        android:layout_marginTop="26dp"
-        android:layout_marginEnd="84dp"
-        android:layout_marginRight="84dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="23dp"
         android:layout_toEndOf="@+id/textwaterpipe"
         android:layout_toRightOf="@+id/textwaterpipe"
-        android:text="ToggleButton" />
+        android:text="@string/togglebutton" />
 
 
   </RelativeLayout>
@@ -67,7 +64,6 @@
 
       android:layout_width="match_parent"
       android:layout_height="100dp"
-      android:layout_alignParentTop="true"
       android:layout_marginTop="8dp"
       android:background="#DFF2FA"
       android:orientation="horizontal">
@@ -84,9 +80,10 @@
 
     <TextView
         android:id="@+id/textcoolingfan"
-        android:layout_width="115dp"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
+        android:gravity="center"
         android:layout_gravity="center_horizontal"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
@@ -100,15 +97,15 @@
 
     <ToggleButton
         android:id="@+id/toggleButtonfan"
-        android:layout_width="121dp"
-        android:layout_height="61dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="27dp"
-        android:layout_marginEnd="84dp"
-        android:layout_marginRight="84dp"
-        android:text="ToggleButton" />
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="25dp"
+        android:layout_toEndOf="@+id/textcoolingfan"
+        android:layout_toRightOf="@+id/textcoolingfan"
+        android:text="@string/togglebutton" />
 
 
   </RelativeLayout>
@@ -117,7 +114,6 @@
       android:layout_width="match_parent"
       android:layout_height="100dp"
       android:orientation="horizontal"
-      android:layout_alignParentTop="true"
       android:background="#DFF2FA"
       android:layout_marginTop="8dp">
 
@@ -134,12 +130,13 @@
 
     <TextView
         android:id="@+id/textheater"
-        android:layout_width="115dp"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_gravity="center_horizontal"
-        android:layout_marginStart="30dp"
-        android:layout_marginLeft="30dp"
+        android:gravity="center"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
         android:layout_marginTop="38dp"
         android:layout_toEndOf="@id/heater"
         android:layout_toRightOf="@id/heater"
@@ -151,18 +148,14 @@
     <ToggleButton
         android:id="@+id/toggleButtonheater"
         android:layout_width="wrap_content"
-        android:layout_height="61dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginStart="38dp"
-        android:layout_marginLeft="38dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
         android:layout_marginTop="22dp"
-        android:layout_marginEnd="84dp"
-        android:layout_marginRight="89dp"
         android:layout_toEndOf="@+id/textheater"
         android:layout_toRightOf="@+id/textheater"
-        android:text="ToggleButton" />
+        android:text="@string/togglebutton" />
 
 
   </RelativeLayout>

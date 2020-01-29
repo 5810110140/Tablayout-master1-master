@@ -92,4 +92,6 @@
     </string>
     <string name="taxttemp">--</string>
     <string name="setting">Setting</string>
+    <string name="togglebutton">ToggleButton</string>
+
 </resources>
