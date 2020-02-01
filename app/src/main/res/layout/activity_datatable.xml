@@ -6,10 +6,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.codingdemos.tablayout.Guide"
+    tools:context="com.codingdemos.tablayout.Data_table"
     android:id="@+id/guide"
     tools:ignore="InvalidId">
 
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="asb" />
 
 
 </ScrollView>
