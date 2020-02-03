@@ -17,7 +17,7 @@ public class InsertV2 {
       private     String date;
       private     String time;
 
-         InsertV2(){}
+       public InsertV2(){}
 
     public
         InsertV2(String id_insert, String type1, String type2, String type3, String ivm1, String ivm2, String ivm3, String date, String time)

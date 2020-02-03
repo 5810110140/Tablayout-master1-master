@@ -2,6 +2,7 @@ package com.codingdemos.tablayout;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -22,7 +23,9 @@ public class InsertAdapter extends RecyclerView.Adapter<InsertAdapter.InsertView
 
     @Override
     public InsertViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return null;
+        View view = LayoutInflater.from(mCtx).inflate(R.layout.insert_adapter,parent, false);
+        InsertViewHolder produrctViewHolder = new InsertViewHolder(view);
+        return produrctViewHolder;
     }
 
     @Override

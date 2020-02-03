@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
         else if  (id == R.id.guide){
-            Intent myguide = new Intent(MainActivity.this, InsertAdapter.class);
+            Intent myguide = new Intent(MainActivity.this, Read_datatable_firebase.class);
             startActivity(myguide);
             return true;
         }

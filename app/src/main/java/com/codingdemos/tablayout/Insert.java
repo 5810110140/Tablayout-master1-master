@@ -62,14 +62,14 @@ public class Insert extends AppCompatActivity {
 
 
 
-    Calendar c;
+        Calendar c;
         DatePickerDialog dpd;
         TimePickerDialog tpd;
 
         private RecyclerView recyclerView;
         private DatabaseReference writedata;
          private FirebaseAuth auth;
-         private InsertAdapter adapter;
+         //private InsertAdapter adapter;
          private List<InsertV2> InsertList;
 
 
@@ -86,6 +86,8 @@ public class Insert extends AppCompatActivity {
 
             super.onCreate(saveInstanceState);
             setContentView(R.layout.activity_insert);
+
+
 
             mTdate = (TextView)findViewById(R.id.textdate);
             mTtime = (TextView)findViewById(R.id.texttime) ;
@@ -151,11 +153,11 @@ public class Insert extends AppCompatActivity {
             mushroomitem3 = findViewById(R.id.slotvalue3);
 
             auth = FirebaseAuth.getInstance();
-            InsertList = new ArrayList<>();
+           InsertList = new ArrayList<>();
 
 
 
-            writedata.addValueEventListener(new ValueEventListener() {
+           /* writedata.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()){
@@ -163,16 +165,16 @@ public class Insert extends AppCompatActivity {
                         InsertV2 iv2 =productSnapshot.getValue(InsertV2.class);
 
                         //รอแก้ไข
-                        /*if(auth.getCurrentUser().toString().equals(iv2.getId_insert().toString()) ){
+                        if(auth.getCurrentUser().toString().equals(iv2.getId_insert().toString()) ){
                             InsertList.add(iv2);
-                        }*/
+                        }
                         Log.d(TAG,"iv2.getDate"+ iv2.getDate().toString());
                         Log.d(TAG,"in2.getTime"+iv2.getTime().toString());
                     }
 
                     adapter = new InsertAdapter(Insert.this, InsertList);
                     //รอแก้ไข
-                   /* recyclerView.setAdapter(adapter); */
+                    recyclerView.setAdapter(adapter);
                 }
 
 
@@ -182,7 +184,7 @@ public class Insert extends AppCompatActivity {
                 public void onCancelled(@NonNull DatabaseError databaseError) {
 
                 }
-            });
+            }); */
 
             btnsave.setOnClickListener(new View.OnClickListener() {
                 @Override
