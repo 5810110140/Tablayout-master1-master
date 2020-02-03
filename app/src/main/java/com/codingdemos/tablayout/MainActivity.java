@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
         else if  (id == R.id.guide){
-            Intent myguide = new Intent(MainActivity.this, Data_table.class);
+            Intent myguide = new Intent(MainActivity.this, InsertAdapter.class);
             startActivity(myguide);
             return true;
         }

@@ -13,7 +13,7 @@
             app:showAsAction="never"/>
         <item
         android:id="@+id/guide"
-        android:title="ความรู้ทั่วไป"
+        android:title="ตารางบันทึกผล"
         app:showAsAction="never" />
         <item
             android:id="@+id/guide1"

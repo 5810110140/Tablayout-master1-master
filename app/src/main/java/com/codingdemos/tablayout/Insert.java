@@ -1,14 +1,18 @@
 package com.codingdemos.tablayout;
 
+import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 
 import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.nfc.Tag;
 import android.support.annotation.NonNull;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.View;
@@ -18,15 +22,22 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
+import android.util.Log;
 
+
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
+
 
 
 
@@ -47,7 +58,7 @@ public class Insert extends AppCompatActivity {
         Spinner mushroomitem1;
         Spinner mushroomitem2;
         Spinner mushroomitem3;
-
+    public static final String TAG = "Insert" ;
 
 
 
@@ -55,7 +66,19 @@ public class Insert extends AppCompatActivity {
         DatePickerDialog dpd;
         TimePickerDialog tpd;
 
+        private RecyclerView recyclerView;
         private DatabaseReference writedata;
+         private FirebaseAuth auth;
+         private InsertAdapter adapter;
+         private List<InsertV2> InsertList;
+
+
+         @SuppressLint("WrongViewCast")
+         private void initView(){
+             recyclerView =findViewById(R.id.recyclerview);
+             recyclerView.setHasFixedSize(true);
+             recyclerView.setLayoutManager(new LinearLayoutManager(this));
+         }
 
 
         @Override
@@ -115,7 +138,7 @@ public class Insert extends AppCompatActivity {
 
 
             FirebaseDatabase database = FirebaseDatabase.getInstance();
-            writedata = database.getReference();
+            writedata = database.getReference("TYPE");
 
             Tdate = (TextView) findViewById(R.id.textdate);
             btnsave = findViewById(R.id.btnsave);
@@ -127,17 +150,30 @@ public class Insert extends AppCompatActivity {
             mushroomitem2 = findViewById(R.id.slotvalue2);
             mushroomitem3 = findViewById(R.id.slotvalue3);
 
+            auth = FirebaseAuth.getInstance();
+            InsertList = new ArrayList<>();
+
 
 
             writedata.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    Map map = (Map)dataSnapshot.getValue();
-                    Map map1 = (Map)dataSnapshot.child("Valuetemp1").getValue();
-                    String textdate = String.valueOf(map1.get("id_data"));
+                if (dataSnapshot.exists()){
+                    for(DataSnapshot productSnapshot : dataSnapshot.getChildren()){
+                        InsertV2 iv2 =productSnapshot.getValue(InsertV2.class);
 
+                        //รอแก้ไข
+                        /*if(auth.getCurrentUser().toString().equals(iv2.getId_insert().toString()) ){
+                            InsertList.add(iv2);
+                        }*/
+                        Log.d(TAG,"iv2.getDate"+ iv2.getDate().toString());
+                        Log.d(TAG,"in2.getTime"+iv2.getTime().toString());
+                    }
 
-                    Tdate.setText(textdate);
+                    adapter = new InsertAdapter(Insert.this, InsertList);
+                    //รอแก้ไข
+                   /* recyclerView.setAdapter(adapter); */
+                }
 
 
                 }
@@ -160,48 +196,41 @@ public class Insert extends AppCompatActivity {
 
         public  void addData(){
             //ประเภทเห็ด
-            String typemushroom1 = mushroomtype1.getSelectedItem().toString();
-            String typemushroom2 = mushroomtype2.getSelectedItem().toString();
-            String typemushroom3 = mushroomtype3.getSelectedItem().toString();
+            String type1 = mushroomtype1.getSelectedItem().toString();
+            String type2 = mushroomtype2.getSelectedItem().toString();
+            String type3 = mushroomtype3.getSelectedItem().toString();
 
             //จำนวนก้อนเห็ด
-            String slot1 = mushroomitem1.getSelectedItem().toString();
-            String slot2 = mushroomitem2.getSelectedItem().toString();
-            String slot3 = mushroomitem3.getSelectedItem().toString();
+            String ivm1 = mushroomitem1.getSelectedItem().toString();
+            String ivm2 = mushroomitem2.getSelectedItem().toString();
+            String ivm3 = mushroomitem3.getSelectedItem().toString();
 
             //วันที่และเวลา
-            String textDate = mTdate.getText().toString();
-            String textTime = mTtime.getText().toString();
+            String date = mTdate.getText().toString();
+            String time = mTtime.getText().toString();
 
 
 
-            if(!TextUtils.isEmpty(typemushroom1)||(!TextUtils.isEmpty(typemushroom2))||(!TextUtils.isEmpty(typemushroom3))){
+            if(!TextUtils.isEmpty(type1)||(!TextUtils.isEmpty(type2))||(!TextUtils.isEmpty(type3))||(!TextUtils.isEmpty(ivm1))||(!TextUtils.isEmpty(ivm2))||(!TextUtils.isEmpty(ivm3))||(!TextUtils.isEmpty(date))
+            ||(!TextUtils.isEmpty(time))){
                 //เขียนค่า ชนิดลง Firebase
-              String id_data = writedata.push().getKey();
-              typemushroom Datatype =    new typemushroom(id_data, typemushroom1,typemushroom2,typemushroom3);
-              writedata.child(id_data).setValue(Datatype);
+              String id_insert = writedata.child("TYPE").push().getKey();
+
+
+                InsertV2 Datatype =    new InsertV2( id_insert,  type1,  type2,  type3,  ivm1,  ivm2,  ivm3,  date,  time);
+                writedata.child(id_insert).setValue(Datatype);
 
 
 
 
-            }
-
-            if (!TextUtils.isEmpty(slot1)||(!TextUtils.isEmpty(slot2))||(!TextUtils.isEmpty(slot3))){
-                //เขียนค่า จำนวนก้อนเห็ดลง Firebase
-                String id_value =writedata.push().getKey();
-                insert_value_mushroom Datavalue = new insert_value_mushroom(id_value, slot1,slot2,slot3);
-                writedata.child(id_value).setValue(Datavalue);
 
 
-            }
-            if(!TextUtils.isEmpty(textDate)||(!TextUtils.isEmpty(textTime))){
-                //บันทึกค่าวันที่และเวลาลง Firebase
-                String id_date =writedata.push().getKey();
-                TimeandDate Data_date =new TimeandDate(id_date,textDate,textTime);
-                writedata.child(id_date).setValue(Data_date);
+
 
                 Toast.makeText(this,"บันทึกสำเร็จ", Toast.LENGTH_LONG).show();
+
             }
+
 
 
         }

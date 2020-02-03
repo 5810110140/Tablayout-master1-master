@@ -1,4 +1,4 @@
-package com.codingdemos.tablayout;
+/*package com.codingdemos.tablayout;
 
 public class TimeandDate {
     String id_date;
@@ -24,3 +24,4 @@ public class TimeandDate {
     }
 }
 
+*/

@@ -1,4 +1,7 @@
-package com.codingdemos.tablayout;
+/*package com.codingdemos.tablayout;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class insert_value_mushroom {
     String id_value;
@@ -13,7 +16,7 @@ public class insert_value_mushroom {
         this.ivm3 = ivm3;
     }
 
-    public String getId_value() {
+    /*public String getId_value() {
         return id_value;
     }
 
@@ -28,4 +31,14 @@ public class insert_value_mushroom {
     public String getIvm3() {
         return ivm3;
     }
-}
+
+    public Map<String, Object> toMap() {
+        HashMap<String, Object> result = new HashMap<>();
+        result.put("id_data",id_value);
+        result.put("value1",ivm1);
+        result.put("value2",ivm2);
+        result.put("value3",ivm3);
+
+        return result;
+    }
+} */
