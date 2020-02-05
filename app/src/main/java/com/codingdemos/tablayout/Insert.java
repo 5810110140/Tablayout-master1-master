@@ -25,6 +25,7 @@ import android.widget.Toast;
 import android.util.Log;
 
 
+import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
@@ -42,8 +43,8 @@ import com.google.firebase.database.ValueEventListener;
 
 
 public class Insert extends AppCompatActivity {
-        TextView mTdate, mTtime;
-        Button mBtdate, mBttime;
+        TextView mTdate,mTdate2,mTdate3, mTtime,mTtime2,mTtime3;
+        Button mBtdate,mBtdate2,mBtdate3, mBttime,mBtime2,mBtime3;
 
 
 
@@ -90,14 +91,23 @@ public class Insert extends AppCompatActivity {
 
 
             mTdate = (TextView)findViewById(R.id.textdate);
+            mTdate2 = findViewById(R.id.textdate2);
+            mTdate3 = findViewById(R.id.textdate3);
             mTtime = (TextView)findViewById(R.id.texttime) ;
+            mTtime2 = findViewById(R.id.texttime2);
+            mTtime3 = findViewById(R.id.texttime3);
             mBtdate = (Button)findViewById(R.id.btndate);
+            mBtdate2 =findViewById(R.id.btndate4);
+            mBtdate3 = findViewById(R.id.btndate5);
             mBttime = (Button)findViewById(R.id.btntime);
+            mBtime2 = findViewById(R.id.btntime2);
+            mBtime3 =findViewById(R.id.btntime3);
 
             mBtdate.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View view) {
                     c = Calendar.getInstance();
+
                     int day = c.get(Calendar.DAY_OF_MONTH);
                     int month = c.get(Calendar.MONTH);
                     int year = c.get(Calendar.YEAR);
@@ -106,6 +116,44 @@ public class Insert extends AppCompatActivity {
                         @Override
                         public void onDateSet(DatePicker view, int mYear, int mMonth, int mDay) {
                             mTdate.setText(mDay + "/" + (mMonth+1)+ "/" + mYear);
+                        }
+                    },year, month, day);
+                    dpd.show();
+                }
+            });
+
+            mBtdate2.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v) {
+                    c = Calendar.getInstance();
+
+                    int day = c.get(Calendar.DAY_OF_MONTH);
+                    int month = c.get(Calendar.MONTH);
+                    int year = c.get(Calendar.YEAR);
+
+                    dpd = new DatePickerDialog(Insert.this, new DatePickerDialog.OnDateSetListener() {
+                        @Override
+                        public void onDateSet(DatePicker view, int mYear, int mMonth, int mDay) {
+                            mTdate2.setText(mDay + "/" + (mMonth+1)+ "/" + mYear);
+                        }
+                    },year, month, day);
+                    dpd.show();
+
+                }
+            });
+            mBtdate3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    c = Calendar.getInstance();
+
+                    int day = c.get(Calendar.DAY_OF_MONTH);
+                    int month = c.get(Calendar.MONTH);
+                    int year = c.get(Calendar.YEAR);
+
+                    dpd = new DatePickerDialog(Insert.this, new DatePickerDialog.OnDateSetListener() {
+                        @Override
+                        public void onDateSet(DatePicker view, int mYear, int mMonth, int mDay) {
+                            mTdate3.setText(mDay + "/" + (mMonth+1)+ "/" + mYear);
                         }
                     },year, month, day);
                     dpd.show();
@@ -122,6 +170,39 @@ public class Insert extends AppCompatActivity {
                         @Override
                         public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                             mTtime.setText(hourOfDay +":" +minute);
+                        }
+                    },mHour, mMiunte, false);
+                    tpd.show();
+                }
+            });
+
+            mBtime2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    final Calendar c = Calendar.getInstance();
+                    int mHour = c.get(Calendar.HOUR_OF_DAY);
+                    int mMiunte = c.get(Calendar.MINUTE);
+
+                    tpd = new TimePickerDialog(Insert.this, new TimePickerDialog.OnTimeSetListener() {
+                        @Override
+                        public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                            mTtime2.setText(hourOfDay +":" +minute);
+                        }
+                    },mHour, mMiunte, false);
+                    tpd.show();
+                }
+            });
+            mBtime3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    final Calendar c = Calendar.getInstance();
+                    int mHour = c.get(Calendar.HOUR_OF_DAY);
+                    int mMiunte = c.get(Calendar.MINUTE);
+
+                    tpd = new TimePickerDialog(Insert.this, new TimePickerDialog.OnTimeSetListener() {
+                        @Override
+                        public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                            mTtime3.setText(hourOfDay +":" +minute);
                         }
                     },mHour, mMiunte, false);
                     tpd.show();
@@ -209,17 +290,22 @@ public class Insert extends AppCompatActivity {
 
             //วันที่และเวลา
             String date = mTdate.getText().toString();
+            String date2 = mTdate2.getText().toString();
+            String date3 =mTdate3.getText().toString();
+
             String time = mTtime.getText().toString();
+            String time2 = mTtime2.getText().toString();
+            String time3 = mTtime3.getText().toString();
 
 
 
-            if(!TextUtils.isEmpty(type1)||(!TextUtils.isEmpty(type2))||(!TextUtils.isEmpty(type3))||(!TextUtils.isEmpty(ivm1))||(!TextUtils.isEmpty(ivm2))||(!TextUtils.isEmpty(ivm3))||(!TextUtils.isEmpty(date))
-            ||(!TextUtils.isEmpty(time))){
+            if(!TextUtils.isEmpty(type1)||(!TextUtils.isEmpty(type2))||(!TextUtils.isEmpty(type3))||(!TextUtils.isEmpty(ivm1))||(!TextUtils.isEmpty(ivm2))||(!TextUtils.isEmpty(ivm3))||(!TextUtils.isEmpty(date))||
+            (!TextUtils.isEmpty(date2))||(!TextUtils.isEmpty(date3))||(!TextUtils.isEmpty(time))||(!TextUtils.isEmpty(time2))||(!TextUtils.isEmpty(time3))){
                 //เขียนค่า ชนิดลง Firebase
               String id_insert = writedata.child("TYPE").push().getKey();
 
 
-                InsertV2 Datatype =    new InsertV2( id_insert,  type1,  type2,  type3,  ivm1,  ivm2,  ivm3,  date,  time);
+                InsertV2 Datatype =    new InsertV2( id_insert,  type1,  type2,  type3,  ivm1,  ivm2,  ivm3,  date, date2, date3, time, time2, time3);
                 writedata.child(id_insert).setValue(Datatype);
 
 
