@@ -35,11 +35,8 @@ public class InsertAdapter extends RecyclerView.Adapter<InsertAdapter.InsertView
         holder.textdate.setText(dataflow.getDate());
         holder.texttime.setText(dataflow.getTime());
         holder.textvalue1.setText(dataflow.getIvm1());
-        holder.textvalue2.setText(dataflow.getIvm2());
-        holder.textvalue3.setText(dataflow.getIvm3());
         holder.texttype1.setText(dataflow.getType1());
-        holder.texttype2.setText(dataflow.getType2());
-        holder.texttype3.setText(dataflow.getType3());
+
 
 
 

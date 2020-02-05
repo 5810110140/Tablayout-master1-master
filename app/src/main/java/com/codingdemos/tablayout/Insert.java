@@ -91,17 +91,13 @@ public class Insert extends AppCompatActivity {
 
 
             mTdate = (TextView)findViewById(R.id.textdate);
-            mTdate2 = findViewById(R.id.textdate2);
-            mTdate3 = findViewById(R.id.textdate3);
+          
             mTtime = (TextView)findViewById(R.id.texttime) ;
-            mTtime2 = findViewById(R.id.texttime2);
-            mTtime3 = findViewById(R.id.texttime3);
+
             mBtdate = (Button)findViewById(R.id.btndate);
-            mBtdate2 =findViewById(R.id.btndate4);
-            mBtdate3 = findViewById(R.id.btndate5);
+
             mBttime = (Button)findViewById(R.id.btntime);
-            mBtime2 = findViewById(R.id.btntime2);
-            mBtime3 =findViewById(R.id.btntime3);
+
 
             mBtdate.setOnClickListener(new View.OnClickListener(){
                 @Override
@@ -122,43 +118,6 @@ public class Insert extends AppCompatActivity {
                 }
             });
 
-            mBtdate2.setOnClickListener(new View.OnClickListener(){
-                @Override
-                public void onClick(View v) {
-                    c = Calendar.getInstance();
-
-                    int day = c.get(Calendar.DAY_OF_MONTH);
-                    int month = c.get(Calendar.MONTH);
-                    int year = c.get(Calendar.YEAR);
-
-                    dpd = new DatePickerDialog(Insert.this, new DatePickerDialog.OnDateSetListener() {
-                        @Override
-                        public void onDateSet(DatePicker view, int mYear, int mMonth, int mDay) {
-                            mTdate2.setText(mDay + "/" + (mMonth+1)+ "/" + mYear);
-                        }
-                    },year, month, day);
-                    dpd.show();
-
-                }
-            });
-            mBtdate3.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    c = Calendar.getInstance();
-
-                    int day = c.get(Calendar.DAY_OF_MONTH);
-                    int month = c.get(Calendar.MONTH);
-                    int year = c.get(Calendar.YEAR);
-
-                    dpd = new DatePickerDialog(Insert.this, new DatePickerDialog.OnDateSetListener() {
-                        @Override
-                        public void onDateSet(DatePicker view, int mYear, int mMonth, int mDay) {
-                            mTdate3.setText(mDay + "/" + (mMonth+1)+ "/" + mYear);
-                        }
-                    },year, month, day);
-                    dpd.show();
-                }
-            });
             mBttime.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View view){
@@ -176,38 +135,7 @@ public class Insert extends AppCompatActivity {
                 }
             });
 
-            mBtime2.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    final Calendar c = Calendar.getInstance();
-                    int mHour = c.get(Calendar.HOUR_OF_DAY);
-                    int mMiunte = c.get(Calendar.MINUTE);
 
-                    tpd = new TimePickerDialog(Insert.this, new TimePickerDialog.OnTimeSetListener() {
-                        @Override
-                        public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                            mTtime2.setText(hourOfDay +":" +minute);
-                        }
-                    },mHour, mMiunte, false);
-                    tpd.show();
-                }
-            });
-            mBtime3.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    final Calendar c = Calendar.getInstance();
-                    int mHour = c.get(Calendar.HOUR_OF_DAY);
-                    int mMiunte = c.get(Calendar.MINUTE);
-
-                    tpd = new TimePickerDialog(Insert.this, new TimePickerDialog.OnTimeSetListener() {
-                        @Override
-                        public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                            mTtime3.setText(hourOfDay +":" +minute);
-                        }
-                    },mHour, mMiunte, false);
-                    tpd.show();
-                }
-            });
 
             Button Return = findViewById(R.id.return1);
             Return.setOnClickListener(new View.OnClickListener(){
@@ -226,12 +154,10 @@ public class Insert extends AppCompatActivity {
             Tdate = (TextView) findViewById(R.id.textdate);
             btnsave = findViewById(R.id.btnsave);
             mushroomtype1 = findViewById(R.id.mushtype1);
-            mushroomtype2 = findViewById(R.id.mushtype2);
-            mushroomtype3 = findViewById(R.id.mushtype3);
+
 
             mushroomitem1 = findViewById(R.id.slotvalue1);
-            mushroomitem2 = findViewById(R.id.slotvalue2);
-            mushroomitem3 = findViewById(R.id.slotvalue3);
+
 
             auth = FirebaseAuth.getInstance();
            InsertList = new ArrayList<>();
@@ -280,46 +206,31 @@ public class Insert extends AppCompatActivity {
         public  void addData(){
             //ประเภทเห็ด
             String type1 = mushroomtype1.getSelectedItem().toString();
-            String type2 = mushroomtype2.getSelectedItem().toString();
-            String type3 = mushroomtype3.getSelectedItem().toString();
+
 
             //จำนวนก้อนเห็ด
             String ivm1 = mushroomitem1.getSelectedItem().toString();
-            String ivm2 = mushroomitem2.getSelectedItem().toString();
-            String ivm3 = mushroomitem3.getSelectedItem().toString();
+
 
             //วันที่และเวลา
             String date = mTdate.getText().toString();
-            String date2 = mTdate2.getText().toString();
-            String date3 =mTdate3.getText().toString();
+
 
             String time = mTtime.getText().toString();
-            String time2 = mTtime2.getText().toString();
-            String time3 = mTtime3.getText().toString();
 
 
 
-            if(!TextUtils.isEmpty(type1)||(!TextUtils.isEmpty(type2))||(!TextUtils.isEmpty(type3))||(!TextUtils.isEmpty(ivm1))||(!TextUtils.isEmpty(ivm2))||(!TextUtils.isEmpty(ivm3))||(!TextUtils.isEmpty(date))||
-            (!TextUtils.isEmpty(date2))||(!TextUtils.isEmpty(date3))||(!TextUtils.isEmpty(time))||(!TextUtils.isEmpty(time2))||(!TextUtils.isEmpty(time3))){
+
+            if(!TextUtils.isEmpty(type1)||(!TextUtils.isEmpty(ivm1))||(!TextUtils.isEmpty(date))||(!TextUtils.isEmpty(time))){
                 //เขียนค่า ชนิดลง Firebase
               String id_insert = writedata.child("TYPE").push().getKey();
-
-
-                InsertV2 Datatype =    new InsertV2( id_insert,  type1,  type2,  type3,  ivm1,  ivm2,  ivm3,  date, date2, date3, time, time2, time3);
+                InsertV2 Datatype =    new InsertV2( id_insert,  type1,  ivm1,  date, time);
                 writedata.child(id_insert).setValue(Datatype);
-
-
-
-
-
-
 
 
                 Toast.makeText(this,"บันทึกสำเร็จ", Toast.LENGTH_LONG).show();
 
             }
-
-
 
         }
 
