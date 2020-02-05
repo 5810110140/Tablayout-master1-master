@@ -98,12 +98,12 @@
 
         <TextView
             android:id="@+id/textdate3"
-            android:layout_width="60dp"
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/btndate"
-            android:layout_marginStart="157dp"
-            android:layout_marginLeft="157dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginStart="142dp"
+            android:layout_marginLeft="142dp"
+            android:layout_marginTop="9dp"
             android:layout_toEndOf="@+id/textdate"
             android:layout_toRightOf="@+id/textdate"
             android:gravity="center"
@@ -171,7 +171,7 @@
 
         <TextView
             android:id="@+id/textdate"
-            android:layout_width="60dp"
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/btndate"
             android:layout_alignParentStart="true"
@@ -186,11 +186,11 @@
 
         <TextView
             android:id="@+id/textdate2"
-            android:layout_width="60dp"
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/btndate"
-            android:layout_marginStart="47dp"
-            android:layout_marginLeft="47dp"
+            android:layout_marginStart="35dp"
+            android:layout_marginLeft="35dp"
             android:layout_marginTop="10dp"
             android:layout_toEndOf="@+id/textdate"
             android:layout_toRightOf="@+id/textdate"
