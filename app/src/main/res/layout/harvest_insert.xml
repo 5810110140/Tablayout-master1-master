@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/harvest"
+    android:background="#E9F2FA"
+    tools:context="com.codingdemos.tablayout.Harvest"
+    tools:ignore="InvalidId">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_gravity="center_vertical"
+            android:background="#B0E5F3"
+            android:gravity="center_horizontal"
+            android:text="บันทึกการเก็บเห็ด"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="35sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        >
+
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="120dp"
+            android:layout_height="55dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="30dp"
+
+            android:layout_marginBottom="30dp"
+            android:layout_toEndOf="@+id/total"
+            android:layout_toRightOf="@+id/total"
+            android:ems="5"
+            android:inputType="numberDecimal" />
+
+        <Spinner
+            android:id="@+id/spinner1"
+            android:layout_width="120dp"
+            android:layout_height="55dp"
+            android:layout_above="@+id/total"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="55dp"
+            android:layout_marginLeft="55dp"
+            android:layout_marginBottom="25dp"
+            android:background="@color/spinner"
+            android:entries="@array/mushroom" />
+
+        <Spinner
+            android:id="@+id/spinner2"
+            android:layout_width="120dp"
+            android:layout_height="55dp"
+            android:layout_above="@+id/total"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginBottom="25dp"
+            android:layout_toEndOf="@+id/spinner1"
+            android:layout_toRightOf="@+id/spinner1"
+            android:background="@color/buttom2"
+            android:entries="@array/Total" />
+
+        <TextView
+            android:id="@+id/total"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:background="#FCFCFC"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="55dp"
+            android:layout_marginLeft="55dp"
+            android:layout_marginBottom="35dp"
+            android:gravity="center"
+            android:text="น้ำหนักเห็ดทั้งหมด \n(กิโลกรัม)"
+            android:textColor="#000000">
+
+        </TextView>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp">
+
+        <Button
+            android:id="@+id/btndate"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:layout_below="@+id/slotvalue1"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="55dp"
+            android:layout_marginLeft="55dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="68dp"
+
+            android:layout_marginRight="68dp"
+            android:text="เลือกวันที่" />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="208dp"
+            android:layout_marginLeft="208dp"
+            android:layout_marginBottom="47dp"
+            android:gravity="center"
+            android:text="Date"
+            android:textSize="30sp">
+
+        </TextView>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+        <Button
+            android:id="@+id/btnsave"
+            android:layout_width="95dp"
+            android:layout_height="55dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="166dp"
+            android:layout_marginRight="166dp"
+            android:layout_marginBottom="24dp"
+            android:background="@color/colorbutton"
+            android:text="บันทึก"
+            android:textColor="#FAFAFA" />
+    </RelativeLayout>
+
+
+</LinearLayout>

@@ -61,8 +61,16 @@ public class MainActivity extends AppCompatActivity {
         else if (id == R.id.guide1){
             Intent myguide1 = new Intent(MainActivity.this, Guide1.class);
             startActivity(myguide1);
+
+        }
+        else if (id == R.id.harvest){
+            Intent harvest = new Intent(MainActivity.this,Harvest.class);
+            startActivity(harvest);
+            return true;
         }
         return MainActivity.super.onOptionsItemSelected(item);
+
+
     }
     @SuppressLint("WrongViewCast")
     @Override

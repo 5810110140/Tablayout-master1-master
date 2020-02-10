@@ -17,8 +17,24 @@ public class InsertV2 {
       private     String date;
       private     String time;
 
+    public InsertV2(String id_insert, String type1, String ivm1, String date, String time) {
+        this.id_insert = id_insert;
+        this.type1 = type1;
 
-    public
+        this.ivm1 = ivm1;
+
+        this.date = date;
+
+        this.time = time;
+
+    }
+
+    public InsertV2() {
+
+    }
+
+
+   /* public
         InsertV2(String id_insert, String type1, String ivm1, String date, String time)
         {
             this.id_insert = id_insert;
@@ -31,7 +47,7 @@ public class InsertV2 {
             this.time = time;
 
 
-        }
+        }*/
 
 
     public String getId_insert() {
@@ -41,22 +57,32 @@ public class InsertV2 {
     public String getType1() {
         return type1;
     }
+    public void setType1(String type1){
+        this.type1 = type1;
+    }
 
 
     public String getIvm1() {
         return ivm1;
     }
-
-
+    public void setTvm1(String Tvm1){
+        this.ivm1 = Tvm1;
+    }
 
 
     public String getDate() {
         return date;
     }
+    public void setDate(String date){
+        this.date = date;
+    }
 
 
     public String getTime() {
         return time;
+    }
+    public void setTime(String time){
+        this.time = time;
     }
 
 

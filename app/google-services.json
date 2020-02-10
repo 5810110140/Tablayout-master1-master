@@ -1,42 +1,42 @@
 {
   "project_info": {
-    "project_number": "1047971601249",
-    "firebase_url": "https://mushroombox-e1cbc.firebaseio.com",
-    "project_id": "mushroombox-e1cbc",
-    "storage_bucket": "mushroombox-e1cbc.appspot.com"
+    "project_number": "162496224464",
+    "firebase_url": "https://tablayout-master1-master-maste.firebaseio.com",
+    "project_id": "tablayout-master1-master-maste",
+    "storage_bucket": "tablayout-master1-master-maste.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1047971601249:android:3930dd3021935873af0320",
+        "mobilesdk_app_id": "1:162496224464:android:e737b9f10427de6b7c92d5",
         "android_client_info": {
           "package_name": "com.codingdemos.tablayout"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1047971601249-307aci6eq9p58uqp8k9v8lka6ibb1hrl.apps.googleusercontent.com",
+          "client_id": "162496224464-u7e16as8kg85og6ebjfds2nniu4vvndf.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.codingdemos.tablayout",
-            "certificate_hash": "4b284b7a46b9f15ecc4366f34c7c572e0a58ba93"
+            "certificate_hash": "f14c78792eac9564c3a1c94a41d2bb2ca45b8b38"
           }
         },
         {
-          "client_id": "1047971601249-f9s0ji5180820suna00ocvo669820lm7.apps.googleusercontent.com",
+          "client_id": "162496224464-jmn6lq3m2r8arplfmtdas78u1kblib24.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBijWEwozzcLknKPnOOYS6Thmgv0PXgM8I"
+          "current_key": "AIzaSyBIjOM_05_kO8FYIGQKCrO8ZGi4hn7BsQU"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1047971601249-f9s0ji5180820suna00ocvo669820lm7.apps.googleusercontent.com",
+              "client_id": "162496224464-jmn6lq3m2r8arplfmtdas78u1kblib24.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

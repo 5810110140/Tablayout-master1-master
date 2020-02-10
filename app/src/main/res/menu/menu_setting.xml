@@ -15,10 +15,16 @@
         android:id="@+id/guide"
         android:title="ตารางบันทึกผล"
         app:showAsAction="never" />
+
+        <item
+            android:id="@+id/harvest"
+            android:title="บันทึกเก็บเห็ด"
+            app:showAsAction="never"/>
         <item
             android:id="@+id/guide1"
             android:title="ความรู้ทั่วไป"
             app:showAsAction="never"/>
+
 
 
     </menu>

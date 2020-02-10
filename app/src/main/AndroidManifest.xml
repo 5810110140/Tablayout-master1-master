@@ -31,6 +31,7 @@
         <activity android:name=".Insert" />
         <activity android:name=".InsertAdapter" />
         <activity android:name=".Read_datatable_firebase"/>
+        <activity android:name="Harvest"/>
 
         <activity
             android:name=".Guide1"

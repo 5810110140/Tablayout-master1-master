@@ -33,6 +33,6 @@ public class ControlFragment extends Fragment {
             Toast.makeText(getActivity(), "Clicked on " + item.getTitle(), Toast.LENGTH_SHORT)
                     .show();
         }
-        return true;
+        return  true;
     }
 }

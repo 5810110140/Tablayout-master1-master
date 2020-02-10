@@ -91,7 +91,7 @@ public class Insert extends AppCompatActivity {
 
 
             mTdate = (TextView)findViewById(R.id.textdate);
-          
+
             mTtime = (TextView)findViewById(R.id.texttime) ;
 
             mBtdate = (Button)findViewById(R.id.btndate);
@@ -221,7 +221,7 @@ public class Insert extends AppCompatActivity {
 
 
 
-            if(!TextUtils.isEmpty(type1)||(!TextUtils.isEmpty(ivm1))||(!TextUtils.isEmpty(date))||(!TextUtils.isEmpty(time))){
+           if(!TextUtils.isEmpty(type1)||(!TextUtils.isEmpty(ivm1))||(!TextUtils.isEmpty(date))||(!TextUtils.isEmpty(time))){
                 //เขียนค่า ชนิดลง Firebase
               String id_insert = writedata.child("TYPE").push().getKey();
                 InsertV2 Datatype =    new InsertV2( id_insert,  type1,  ivm1,  date, time);
@@ -231,6 +231,17 @@ public class Insert extends AppCompatActivity {
                 Toast.makeText(this,"บันทึกสำเร็จ", Toast.LENGTH_LONG).show();
 
             }
+           /* if((type1.equals(""))&&(type1.equals(""))&&(ivm1.equals(""))&&(date.equals(""))&&(time.equals(""))){
+                //เขียนค่า ชนิดลง Firebase
+                String id_insert = writedata.child("TYPE").push().getKey();
+                // InsertV2 Datatype =    new InsertV2( id_insert,  type1,  ivm1,  date, time);
+
+                // writedata.child(id_insert).setValue(Datatype);
+
+
+                //Toast.makeText(this,"บันทึกสำเร็จ", Toast.LENGTH_LONG).show();
+
+            }*/
 
         }
 
