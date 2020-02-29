@@ -5,7 +5,7 @@ import java.util.HashMap;
 public class InsertV2 {
 
 
-      private    String id_insert;
+      private   String id_insert;
       private   String type1;
        // private String type2;
       //  private String type3;

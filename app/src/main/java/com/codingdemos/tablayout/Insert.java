@@ -39,14 +39,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
 
-
-
-
 public class Insert extends AppCompatActivity {
         TextView mTdate,mTdate2,mTdate3, mTtime,mTtime2,mTtime3;
         Button mBtdate,mBtdate2,mBtdate3, mBttime,mBtime2,mBtime3;
-
-
 
         // ตัวแปรบันทึกค่า
         TextView Tdate;
@@ -60,8 +55,6 @@ public class Insert extends AppCompatActivity {
         Spinner mushroomitem2;
         Spinner mushroomitem3;
     public static final String TAG = "Insert" ;
-
-
 
         Calendar c;
         DatePickerDialog dpd;
@@ -87,8 +80,6 @@ public class Insert extends AppCompatActivity {
 
             super.onCreate(saveInstanceState);
             setContentView(R.layout.activity_insert);
-
-
 
             mTdate = (TextView)findViewById(R.id.textdate);
 
@@ -135,8 +126,6 @@ public class Insert extends AppCompatActivity {
                 }
             });
 
-
-
             Button Return = findViewById(R.id.return1);
             Return.setOnClickListener(new View.OnClickListener(){
                 @Override
@@ -146,19 +135,13 @@ public class Insert extends AppCompatActivity {
                 }
             });
 
-
-
             FirebaseDatabase database = FirebaseDatabase.getInstance();
             writedata = database.getReference("TYPE");
 
             Tdate = (TextView) findViewById(R.id.textdate);
             btnsave = findViewById(R.id.btnsave);
             mushroomtype1 = findViewById(R.id.mushtype1);
-
-
             mushroomitem1 = findViewById(R.id.slotvalue1);
-
-
             auth = FirebaseAuth.getInstance();
            InsertList = new ArrayList<>();
 
@@ -206,20 +189,11 @@ public class Insert extends AppCompatActivity {
         public  void addData(){
             //ประเภทเห็ด
             String type1 = mushroomtype1.getSelectedItem().toString();
-
-
             //จำนวนก้อนเห็ด
             String ivm1 = mushroomitem1.getSelectedItem().toString();
-
-
             //วันที่และเวลา
             String date = mTdate.getText().toString();
-
-
             String time = mTtime.getText().toString();
-
-
-
 
            if(!TextUtils.isEmpty(type1)||(!TextUtils.isEmpty(ivm1))||(!TextUtils.isEmpty(date))||(!TextUtils.isEmpty(time))){
                 //เขียนค่า ชนิดลง Firebase
@@ -244,12 +218,8 @@ public class Insert extends AppCompatActivity {
             }*/
 
         }
-
-
         public  void openDataFragment(){
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         }
-
-
 }
