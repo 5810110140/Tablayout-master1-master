@@ -127,7 +127,7 @@ public class Read_datatable_firebase extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
-        }); 
+        });
 
     }
 }

@@ -5,12 +5,14 @@ public class harvast_value {
     private String type;
     private String value;
     private String weight;
+    private String date;
 
-    public harvast_value(String id_harvast, String type, String value, String weight) {
+    public harvast_value(String id_harvast, String type, String value, String weight, String date) {
         this.id_harvast = id_harvast;
         this.type = type;
         this.value = value;
         this.weight = weight;
+        this.date = date;
     }
 
     public String getId_harvast() {
@@ -43,5 +45,13 @@ public class harvast_value {
 
     public void setWeight(String weight) {
         this.weight = weight;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 }
