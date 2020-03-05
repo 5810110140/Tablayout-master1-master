@@ -1,4 +1,4 @@
-/*package com.codingdemos.tablayout;
+package com.codingdemos.tablayout;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -107,4 +107,4 @@ public class Data_table extends Activity {
 
     }
 
-}*/
+}

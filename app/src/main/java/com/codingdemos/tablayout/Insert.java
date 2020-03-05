@@ -54,6 +54,8 @@ public class Insert extends AppCompatActivity {
         Spinner mushroomitem1;
         Spinner mushroomitem2;
         Spinner mushroomitem3;
+
+        Spinner Rowbox;
     public static final String TAG = "Insert" ;
 
         Calendar c;
@@ -88,6 +90,7 @@ public class Insert extends AppCompatActivity {
             mBtdate = (Button)findViewById(R.id.btndate);
 
             mBttime = (Button)findViewById(R.id.btntime);
+
 
 
             mBtdate.setOnClickListener(new View.OnClickListener(){
@@ -142,6 +145,7 @@ public class Insert extends AppCompatActivity {
             btnsave = findViewById(R.id.btnsave);
             mushroomtype1 = findViewById(R.id.mushtype1);
             mushroomitem1 = findViewById(R.id.slotvalue1);
+            Rowbox = findViewById(R.id.row);
             auth = FirebaseAuth.getInstance();
            InsertList = new ArrayList<>();
 

@@ -11,8 +11,8 @@ public class harvast_value {
         this.id_harvast = id_harvast;
         this.type = type;
         this.value = value;
-        this.weight = weight;
         this.date = date;
+        this.weight = weight;
     }
 
     public String getId_harvast() {

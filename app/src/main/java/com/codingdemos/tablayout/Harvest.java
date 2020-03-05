@@ -1,6 +1,7 @@
 package com.codingdemos.tablayout;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 
 import android.support.annotation.Nullable;
@@ -73,6 +74,7 @@ public class Harvest extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 addData();
+                reset();
             }
         });
 
@@ -80,19 +82,31 @@ public class Harvest extends AppCompatActivity {
 
     private void addData() {
 
-        String date = mTDate.getText().toString();
+
         String type = Stypemushroom.getSelectedItem().toString();
         String value = Svaluemushroom.getSelectedItem().toString();
-        String weight = Weighttext.getText().toString();
 
-        if(!TextUtils.isEmpty(date)||(!TextUtils.isEmpty(type))||(!TextUtils.isEmpty(value))||(!TextUtils.isEmpty(weight))){
+        //รับค่าน้ำหนัก
+        String Weight = textdate.getText().toString();
+        //รับค่าวันที่
+        String Date1 = Weighttext.getText().toString();
+
+        if(!TextUtils.isEmpty(Date1)||(!TextUtils.isEmpty(type))||(!TextUtils.isEmpty(value))||(!TextUtils.isEmpty(Weight))){
 
             String id_harvast = writedata.child("\" harvesting \"").push().getKey();
-            harvast_value Datatype =    new harvast_value(id_harvast,  type,  value,  date,  weight);
+            harvast_value Datatype =    new harvast_value(id_harvast,  type,  value,  Date1,  Weight);
             writedata.child(id_harvast).setValue(Datatype);
 
-
+            Toast.makeText(this,"บันทึกสำเร็จ", Toast.LENGTH_LONG).show();
         }
+    }
+    private void reset(){
+        openDataFragment();
+    }
+
+    public  void openDataFragment(){
+        Intent intent = new Intent(this, Harvest.class);
+        startActivity(intent);
     }
 }
 
