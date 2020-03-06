@@ -14,7 +14,6 @@
     <string name="action_setting">Setting</string>
 
     <array name="mushroom">
-        <item>ชนิดของเห็ด</item>
         <item>เห็ดนางฟ้า</item>
         <item>เห็ดหอม</item>
         <item>เห็ดหูหนู</item>
@@ -24,7 +23,6 @@
     </array>
 
     <array name="Total">
-        <item>จำนวนก้อน</item>
         <item>1 ก้อน</item>
         <item>1 ก้อน</item>
         <item>2 ก้อน</item>
@@ -34,7 +32,13 @@
         <item>6 ก้อน</item>
         <item>7 ก้อน</item>
         <item>8 ก้อน</item>
+    </array>
 
+    <array name="row">
+        <item>1</item>
+        <item>ฺฺฺฺฺ2</item>
+        <item>3</item>
+        <item>4</item>
     </array>
 
     <string name="mush1">ความรู้ทั่วไปของเห็ด</string>

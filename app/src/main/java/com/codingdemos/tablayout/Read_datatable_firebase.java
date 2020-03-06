@@ -46,7 +46,7 @@ public class Read_datatable_firebase extends AppCompatActivity {
     @Override
     public void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.insert_adapter);
+        setContentView(R.layout.activity_datatable);
         //initView();
 
 //        ReadFirebaseInsert();
@@ -127,7 +127,7 @@ public class Read_datatable_firebase extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
-        }); 
+        });
 
     }
 }

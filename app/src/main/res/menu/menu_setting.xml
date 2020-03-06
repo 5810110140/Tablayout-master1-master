@@ -24,6 +24,10 @@
             android:id="@+id/guide1"
             android:title="ความรู้ทั่วไป"
             app:showAsAction="never"/>
+        <item
+            android:id="@+id/row_the_box"
+            android:title="ช่องในตู้"
+            app:showAsAction="never"/>
 
 
 

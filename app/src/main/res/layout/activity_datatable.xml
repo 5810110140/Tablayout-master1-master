@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.codingdemos.tablayout.Data_table"
-    android:id="@+id/guide"
+    android:id="@+id/datatable"
     tools:ignore="InvalidId">
 
 

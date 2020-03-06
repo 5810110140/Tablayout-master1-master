@@ -68,6 +68,11 @@ public class MainActivity extends AppCompatActivity {
             startActivity(harvest);
             return true;
         }
+        else if (id == R.id.row_the_box){
+            Intent row = new Intent(MainActivity.this,Row_inthe_box.class);
+            startActivity(row);
+            return  true;
+        }
         return MainActivity.super.onOptionsItemSelected(item);
 
 
