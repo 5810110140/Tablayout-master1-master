@@ -8,7 +8,7 @@
         android:title="@string/setting">
     <menu>
         <item
-            android:id="@+id/about_us"
+            android:id="@+id/recorder_insert1"
             android:title="บันทึกผล"
             app:showAsAction="never"/>
         <item

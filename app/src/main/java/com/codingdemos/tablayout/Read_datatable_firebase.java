@@ -33,6 +33,7 @@ public class Read_datatable_firebase extends AppCompatActivity {
     private List<InsertV2> InsertList;
     private String DataId;
     private ListView mListView;
+    private int counttype;
 
     @SuppressLint("WrongViewCast")
     private void initView(){
@@ -52,16 +53,24 @@ public class Read_datatable_firebase extends AppCompatActivity {
 //        ReadFirebaseInsert();
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        writedata = database.getReference("TYPE");
+        //writedata = database.getReference("TYPE");
+        writedata = FirebaseDatabase.getInstance().getReference().child("TYPE");
         auth = FirebaseAuth.getInstance();
         FirebaseUser user  = auth.getCurrentUser();
         DataId = user.getUid();
 
 
-        writedata.addValueEventListener(new ValueEventListener() {
+        writedata.child(DataId).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    showData(dataSnapshot);
+                    if(dataSnapshot.exists())
+                    {
+                        counttype = (int) dataSnapshot.getChildrenCount();
+
+                    }
+                    else {
+
+                    }
             }
 
             @Override

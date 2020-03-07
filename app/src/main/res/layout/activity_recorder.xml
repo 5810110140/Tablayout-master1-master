@@ -1,32 +1,27 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/recorder_insert"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.codingdemos.tablayout.RecoderInesert"
-    android:background="#E9F2FA">
-
+    android:background="#E9F2FA"
+    tools:context="com.codingdemos.tablayout.Recorder1"
+    android:id="@+id/recorder_insert">
 
     <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+       android:layout_height="wrap_content"
         android:orientation="vertical">
-
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_gravity="center_vertical"
-            android:background="#B0E5F3"
+            android:layout_height="50dp"
+            android:text="บันทึกการเพราะปลูก"
             android:gravity="center_horizontal"
-            android:text="บันทึกการเพาะปลูก"
             android:textAlignment="center"
-            android:textColor="#000000"
-            android:textSize="35sp" />
+            android:background="#022217"
+            android:textColor="#FCF7F7"
+            android:textSize="35sp"/>
 
     </RelativeLayout>
-
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -34,9 +29,7 @@
         android:layout_marginTop="6dp"
         android:orientation="vertical">
 
-
         <TextView
-            android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
@@ -48,14 +41,17 @@
             android:text="ชนิดเห็ด"
             android:textSize="20sp" />
 
+
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="32dp"
-            android:layout_marginLeft="32dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginLeft="28dp"
+            android:layout_marginTop="18dp"
+
+
             android:layout_toEndOf="@+id/mushtype1"
             android:layout_toRightOf="@+id/mushtype1"
             android:text="จำนวนก้อน"
@@ -69,7 +65,7 @@
             android:layout_gravity="center"
             android:layout_marginStart="18dp"
             android:layout_marginLeft="18dp"
-            android:layout_marginTop="53dp"
+            android:layout_marginTop="52dp"
             android:layout_toEndOf="@+id/mushtype1"
             android:layout_toRightOf="@+id/mushtype1"
             android:background="@color/spinner"
@@ -83,8 +79,8 @@
             android:layout_below="@+id/slotvalue1"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
-            android:layout_marginStart="71dp"
-            android:layout_marginLeft="71dp"
+            android:layout_marginStart="27dp"
+            android:layout_marginLeft="27dp"
             android:layout_marginTop="25dp"
             android:layout_marginEnd="68dp"
 
@@ -99,9 +95,9 @@
             android:layout_below="@+id/slotvalue1"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
-            android:layout_marginStart="211dp"
-            android:layout_marginLeft="211dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginStart="162dp"
+            android:layout_marginLeft="162dp"
+            android:layout_marginTop="25dp"
             android:text="เลือกเวลา" />
 
         <TextView
@@ -110,15 +106,16 @@
             android:layout_height="45dp"
 
             android:layout_below="@+id/btntime"
-            android:layout_marginStart="22dp"
-            android:layout_marginLeft="22dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="23dp"
             android:layout_toEndOf="@+id/textdate"
             android:layout_toRightOf="@+id/textdate"
             android:gravity="center"
             android:text="Time"
             android:textAlignment="center"
             android:textSize="15sp" />
+
 
         <TextView
             android:id="@+id/textdate"
@@ -127,9 +124,9 @@
             android:layout_below="@+id/btndate"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
-            android:layout_marginStart="73dp"
-            android:layout_marginLeft="73dp"
-            android:layout_marginTop="22dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
             android:gravity="center"
             android:text="Date"
             android:textAlignment="center"
@@ -142,27 +139,12 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="37dp"
-            android:layout_marginLeft="37dp"
-            android:layout_marginTop="51dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="50dp"
             android:background="@color/spinner"
             android:entries="@array/mushroom"
             android:gravity="center"
-            android:textAlignment="center" />
-
-        <Spinner
-            android:id="@+id/row"
-            android:layout_width="60dp"
-            android:layout_height="55dp"
-            android:layout_below="@+id/textView2"
-            android:layout_gravity="center"
-            android:layout_marginStart="23dp"
-            android:layout_marginLeft="23dp"
-            android:layout_marginTop="11dp"
-            android:layout_toEndOf="@+id/slotvalue1"
-            android:layout_toRightOf="@+id/slotvalue1"
-            android:background="@color/spinner"
-            android:entries="@array/row"
             android:textAlignment="center" />
 
         <TextView
@@ -178,16 +160,53 @@
             android:text="แถว"
             android:textSize="20sp" />
 
-
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="80dp"
+            android:layout_height="54dp"
+            android:layout_below="@+id/textView2"
+            android:layout_gravity="center"
+            android:layout_marginStart="19dp"
+            android:layout_marginLeft="19dp"
+            android:layout_marginTop="12dp"
+            android:background="@color/spinner"
+            android:entries="@array/row"
+            android:layout_toEndOf="@+id/slotvalue1"
+            android:layout_toRightOf="@+id/slotvalue1"
+            android:textAlignment="center"/>
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="200dp">
 
+        <Button
+            android:id="@+id/return1"
+            android:layout_width="95dp"
+            android:layout_height="55dp"
+            android:layout_centerInParent="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="146dp"
+            android:layout_marginLeft="146dp"
+            android:layout_marginBottom="71dp"
+            android:background="@color/colorbutton"
+            android:text="ย้อนกลับ"
+            android:textColor="#FAFAFA" />
 
-
-
+        <Button
+            android:id="@+id/btnsave"
+            android:layout_width="95dp"
+            android:layout_height="55dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginEnd="171dp"
+            android:layout_marginRight="171dp"
+            android:background="@color/colorbutton"
+            android:text="บันทึก"
+            android:textColor="#FAFAFA" />
     </RelativeLayout>
 
 </LinearLayout>

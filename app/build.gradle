@@ -42,7 +42,7 @@ dependencies {
     implementation 'com.firebase:firebase-client-android:2.5.0'
 
     implementation 'com.android.support:recyclerview-v7:26.1.0'
-
+   
 
 }
 apply plugin: 'com.google.gms.google-services'

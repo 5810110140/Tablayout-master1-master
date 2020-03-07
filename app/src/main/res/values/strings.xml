@@ -35,10 +35,10 @@
     </array>
 
     <array name="row">
-        <item>1</item>
-        <item>ฺฺฺฺฺ2</item>
-        <item>3</item>
-        <item>4</item>
+        <item>แถว1</item>
+        <item>แถว2</item>
+        <item>แถว3</item>
+        <item>แถว4</item>
     </array>
 
     <string name="mush1">ความรู้ทั่วไปของเห็ด</string>

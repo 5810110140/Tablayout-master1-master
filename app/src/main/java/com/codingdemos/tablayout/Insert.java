@@ -1,4 +1,4 @@
-package com.codingdemos.tablayout;
+/*package com.codingdemos.tablayout;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
@@ -180,17 +180,17 @@ public class Insert extends AppCompatActivity {
                 }
             }); */
 
-            btnsave.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    addData();
+         //   btnsave.setOnClickListener(new View.OnClickListener() {
+         //      @Override
+          //      public void onClick(View view) {
+          //          addData();
 
-                }
-            });
+        //        }
+        //    });
 
-        }
+     //   }
 
-        public  void addData(){
+     /*   public  void addData(){
             //ประเภทเห็ด
             String type1 = mushroomtype1.getSelectedItem().toString();
             //จำนวนก้อนเห็ด
@@ -221,9 +221,10 @@ public class Insert extends AppCompatActivity {
 
             }*/
 
-        }
-        public  void openDataFragment(){
+       // }
+      /*  public  void openDataFragment(){
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         }
 }
+*/

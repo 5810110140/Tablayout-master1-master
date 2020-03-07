@@ -48,10 +48,16 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        if (id == R.id.about_us){
-            Intent about = new Intent(MainActivity.this, Insert.class);
+        /*if (id == R.id.about_us){
+            Intent about = new Intent(MainActivity.this, InsertEdit.class);
             startActivity(about);
             return true;
+        }*/
+
+        if (id == R.id.recorder_insert1){
+            Intent recorder1 = new Intent(MainActivity.this,Recorder1.class);
+            startActivity(recorder1);
+            return  true;
         }
         else if  (id == R.id.guide){
             Intent myguide = new Intent(MainActivity.this, Read_datatable_firebase.class);
@@ -73,6 +79,8 @@ public class MainActivity extends AppCompatActivity {
             startActivity(row);
             return  true;
         }
+
+
         return MainActivity.super.onOptionsItemSelected(item);
 
 
