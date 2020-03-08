@@ -66,7 +66,7 @@ public class Read_datatable_firebase extends AppCompatActivity {
         FirebaseUser user  = auth.getCurrentUser();
         DataId = user.getUid();
 
-        
+
         writedata.child(DataId).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
