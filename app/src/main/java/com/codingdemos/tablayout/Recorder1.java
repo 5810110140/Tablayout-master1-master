@@ -129,14 +129,17 @@ public class Recorder1 extends AppCompatActivity {
         String type1 = mushroomtype1.getSelectedItem().toString();
         //จำนวนก้อนเห็ด
         String ivm1 = mushroomitem1.getSelectedItem().toString();
+
+        String row = Rowbox.getSelectedItem().toString();
+
         //วันที่และเวลา
         String date = mTdate.getText().toString();
         String time = mTtime.getText().toString();
 
-        if (!TextUtils.isEmpty(type1) || (!TextUtils.isEmpty(ivm1)) || (!TextUtils.isEmpty(date)) || (!TextUtils.isEmpty(time))) {
+        if (!TextUtils.isEmpty(type1) || (!TextUtils.isEmpty(ivm1)) || (!TextUtils.isEmpty(date)) || (!TextUtils.isEmpty(time))||(!TextUtils.isEmpty(row))) {
             //เขียนค่า ชนิดลง Firebase
             String id_insert = writedata.child("TYPE").push().getKey();
-            InsertV2 Datatype = new InsertV2(id_insert,type1,ivm1,date,time);
+            InsertV2 Datatype = new InsertV2(id_insert,type1,ivm1,date,time,row);
             writedata.child(id_insert).setValue(Datatype);
 
 

@@ -55,14 +55,14 @@ public class InsertAdapter extends RecyclerView.Adapter<InsertAdapter.InsertView
         public InsertViewHolder(View itemView){
             super(itemView);
 
-         //   textdate =itemView.findViewById(R.id.Tdate);
-          //  texttime =itemView.findViewById(R.id.Ttime);
+            textdate =itemView.findViewById(R.id.Tdate);
+            texttime =itemView.findViewById(R.id.Ttime);
 
-           // texttype1=itemView.findViewById(R.id.type1);
+            texttype1=itemView.findViewById(R.id.type1);
            // texttype2=itemView.findViewById(R.id.type2);
            // texttype3=itemView.findViewById(R.id.type3);
 
-          //  textvalue1=itemView.findViewById(R.id.Va1);
+            textvalue1=itemView.findViewById(R.id.Va1);
           //  textvalue2=itemView.findViewById(R.id.Va2);
           //  textvalue3=itemView.findViewById(R.id.Va3);
 

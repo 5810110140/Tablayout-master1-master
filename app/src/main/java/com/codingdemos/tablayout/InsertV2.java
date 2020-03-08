@@ -14,18 +14,17 @@ public class InsertV2 {
         //private String ivm2;
        // private String ivm3;
 
-      private     String date;
-      private     String time;
+      private String date;
+      private String time;
+      private String row;
 
-    public InsertV2(String id_insert, String type1, String ivm1, String date, String time) {
+    public InsertV2(String id_insert, String type1, String ivm1, String date, String time, String row) {
         this.id_insert = id_insert;
         this.type1 = type1;
-
         this.ivm1 = ivm1;
-
         this.date = date;
-
         this.time = time;
+        this.row = row;
 
     }
 
@@ -85,8 +84,13 @@ public class InsertV2 {
         this.time = time;
     }
 
+    public String getRow() {
+        return row;
+    }
 
-
+    public void setRow(String row) {
+        this.row = row;
+    }
 }
 
 
