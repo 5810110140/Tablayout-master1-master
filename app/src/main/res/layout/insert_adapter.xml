@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     tools:context="com.codingdemos.tablayout.Read_datatable_firebase"
     android:id="@+id/insert_adapter"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:weightSum="100">
 
     <Button

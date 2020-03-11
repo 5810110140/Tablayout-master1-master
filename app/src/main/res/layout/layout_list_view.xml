@@ -14,12 +14,8 @@
        android:layout_height="wrap_content"
        android:layout_alignParentTop="true"
        android:id="@+id/messageRecyclerView"
-       android:orientation="vertical"
+       android:orientation="horizontal"
        tools:listitem="@layout/insert_adapter"/>
-
-
-
-
 
 
 </LinearLayout>

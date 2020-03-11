@@ -54,7 +54,7 @@ public class Read_datatable_firebase extends AppCompatActivity {
     @Override
     public void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.layout_list_view);
+        setContentView(R.layout.insert_adapter);
         //initView();
 
 //        ReadFirebaseInsert();
@@ -75,14 +75,14 @@ public class Read_datatable_firebase extends AppCompatActivity {
                     {
                       for(DataSnapshot productSnapshot:dataSnapshot.getChildren()){
                           InsertV2 Insertdata = productSnapshot.getValue(InsertV2.class);
-                         // Log.d(TAG, "p.getCourse_title() : " + Insertdata.getId_insert());
+                          Log.d(TAG, "p.getCourse_title() : " + Insertdata.getDate());
                           InsertList.add(Insertdata);
                       }
 
                     }
-                    else {
+                    adapter = new InsertAdapter(Read_datatable_firebase.this,InsertList);
+                    //recyclerView.setAdapter(adapter);
 
-                    }
             }
 
             @Override
@@ -90,7 +90,7 @@ public class Read_datatable_firebase extends AppCompatActivity {
 
             }
         });
-        LinearLayout menu_home = findViewById(R.id.list_view);
+        LinearLayout menu_home = findViewById(R.id.insert_adapter);
         menu_home.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -125,7 +125,7 @@ public class Read_datatable_firebase extends AppCompatActivity {
         }
     }  */
 
-    private void ReadFirebaseInsert(){
+  /*  private void ReadFirebaseInsert(){
         auth = FirebaseAuth.getInstance();
         //InsertList = new ArrayList<>();
 
@@ -141,27 +141,27 @@ public class Read_datatable_firebase extends AppCompatActivity {
                        /* if(auth.getCurrentUser().getEmail().toString().equals(iv2.getId_insert().toString()) ){
                             InsertList.add(iv2);
                         }*/
-                        Log.d(TAG,"iv2.getDate"+ iv2.getDate().toString());
+            //            Log.d(TAG,"iv2.getDate"+ iv2.getDate().toString());
                        // Log.d(TAG,"in2.getTime"+iv2.getTime().toString());
 
 
-                    }
+             //       }
 
                     //adapter = new InsertAdapter(Read_datatable_firebase.this, InsertList);
                     //รอแก้ไข
-                    recyclerView.setAdapter(adapter);
-                }
+           //         recyclerView.setAdapter(adapter);
+          //      }
 
 
-            }
+         //   }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
+         //   @Override
+         //   public void onCancelled(@NonNull DatabaseError databaseError) {
 
-            }
-        });
+       //     }
+     //   });
 
-    }
+  //  }*/
 
 
 
