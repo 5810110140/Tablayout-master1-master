@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.app.AlertController.RecycleListView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/recyclerview"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    tools:context="com.codingdemos.tablayout.Read_datatable_firebase"
+    android:id="@+id/insert_adapter"
+    android:orientation="vertical"
     android:weightSum="100">
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="การ์ดจ">
+    </Button>
 
     <TextView
         android:id="@+id/Tdate"
@@ -83,5 +92,9 @@
     </LinearLayout>
 
 
-</android.support.v7.app.AlertController.RecycleListView>
+
+
+
+
+</LinearLayout>
 

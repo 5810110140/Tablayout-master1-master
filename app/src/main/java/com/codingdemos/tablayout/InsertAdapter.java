@@ -2,6 +2,7 @@ package com.codingdemos.tablayout;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,7 +37,7 @@ public class InsertAdapter extends RecyclerView.Adapter<InsertAdapter.InsertView
         holder.texttime.setText(dataflow.getTime());
         holder.textvalue1.setText(dataflow.getIvm1());
         holder.texttype1.setText(dataflow.getType1());
-
+       // Log.d(TAG, "dataflow : " + InsertList.size());
 
 
 
@@ -65,6 +66,8 @@ public class InsertAdapter extends RecyclerView.Adapter<InsertAdapter.InsertView
             textvalue1=itemView.findViewById(R.id.Va1);
           //  textvalue2=itemView.findViewById(R.id.Va2);
           //  textvalue3=itemView.findViewById(R.id.Va3);
+
+            Log.d(TAG, "dataflow : " + InsertList.size());
 
         }
 

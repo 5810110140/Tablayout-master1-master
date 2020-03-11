@@ -44,7 +44,7 @@ public class Read_datatable_firebase extends AppCompatActivity {
 
     @SuppressLint("WrongViewCast")
     private void initView(){
-        recyclerView =findViewById(R.id.recyclerview);
+        recyclerView =findViewById(R.id.messageRecyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
@@ -54,30 +54,35 @@ public class Read_datatable_firebase extends AppCompatActivity {
     @Override
     public void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_datatable);
+        setContentView(R.layout.layout_list_view);
         //initView();
 
 //        ReadFirebaseInsert();
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         //writedata = database.getReference("TYPE");
-        writedata = FirebaseDatabase.getInstance().getReference().child("TYPE");
+        writedata = FirebaseDatabase.getInstance().getReference("TYPE");
         auth = FirebaseAuth.getInstance();
         FirebaseUser user  = auth.getCurrentUser();
-        DataId = user.getUid();
+       // DataId = user.getUid();
 
+        InsertList  = new ArrayList<>();
 
-        writedata.child(DataId).addValueEventListener(new ValueEventListener() {
+        writedata.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                   /* if(dataSnapshot.exists())
+                    if(dataSnapshot.exists())
                     {
-                        counttype = (int) dataSnapshot.getChildrenCount();
+                      for(DataSnapshot productSnapshot:dataSnapshot.getChildren()){
+                          InsertV2 Insertdata = productSnapshot.getValue(InsertV2.class);
+                         // Log.d(TAG, "p.getCourse_title() : " + Insertdata.getId_insert());
+                          InsertList.add(Insertdata);
+                      }
 
                     }
                     else {
 
-                    }*/
+                    }
             }
 
             @Override
@@ -85,8 +90,7 @@ public class Read_datatable_firebase extends AppCompatActivity {
 
             }
         });
-
-        LinearLayout menu_home = (LinearLayout)findViewById(R.id.datatable);
+        LinearLayout menu_home = findViewById(R.id.list_view);
         menu_home.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {

@@ -150,21 +150,6 @@
             android:gravity="center"
             android:textAlignment="center" />
 
-        <Spinner
-            android:id="@+id/row"
-            android:layout_width="60dp"
-            android:layout_height="55dp"
-            android:layout_below="@+id/textView2"
-            android:layout_gravity="center"
-            android:layout_marginStart="23dp"
-            android:layout_marginLeft="23dp"
-            android:layout_marginTop="11dp"
-            android:layout_toEndOf="@+id/slotvalue1"
-            android:layout_toRightOf="@+id/slotvalue1"
-            android:background="@color/spinner"
-            android:entries="@array/row"
-            android:textAlignment="center" />
-
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"

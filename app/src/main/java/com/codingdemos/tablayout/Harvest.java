@@ -93,7 +93,7 @@ public class Harvest extends AppCompatActivity {
 
         if(!TextUtils.isEmpty(Date1)||(!TextUtils.isEmpty(type))||(!TextUtils.isEmpty(value))||(!TextUtils.isEmpty(Weight))){
 
-            String id_harvast = writedata.child("\" harvesting \"").push().getKey();
+            String id_harvast = writedata.child("harvesting").push().getKey();
             harvast_value Datatype =    new harvast_value(id_harvast,  type,  value,  Date1,  Weight);
             writedata.child(id_harvast).setValue(Datatype);
 
