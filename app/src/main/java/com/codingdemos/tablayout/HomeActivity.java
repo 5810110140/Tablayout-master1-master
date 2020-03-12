@@ -1,4 +1,4 @@
-package com.codingdemos.tablayout;
+/*package com.codingdemos.tablayout;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,3 +11,4 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_datatable);
     }
 }
+ */

@@ -28,13 +28,11 @@
         <activity android:name=".mushroom2" />
         <activity android:name=".Guide1" />
         <activity android:name=".HomeActivity" />
-        <activity android:name=".RecoderInesert" />
         <activity android:name=".Recorder1"/>
         <activity android:name=".InsertAdapter" />
         <activity android:name=".Read_datatable_firebase"/>
         <activity android:name="Harvest"/>
         <activity android:name="Row_inthe_box"/>
-        <activity android:name=".Data_table"/>
 
         <activity
             android:name=".Guide1"

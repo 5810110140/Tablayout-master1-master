@@ -75,13 +75,13 @@ public class Read_datatable_firebase extends AppCompatActivity {
                     {
                       for(DataSnapshot productSnapshot:dataSnapshot.getChildren()){
                           InsertV2 Insertdata = productSnapshot.getValue(InsertV2.class);
-                          Log.d(TAG, "p.getCourse_title() : " + Insertdata.getDate());
+                          Log.d(TAG, "getCourse_title : " + Insertdata.getDate());
                           InsertList.add(Insertdata);
                       }
 
                     }
                     adapter = new InsertAdapter(Read_datatable_firebase.this,InsertList);
-                    //recyclerView.setAdapter(adapter);
+                    recyclerView.setAdapter(adapter);
 
             }
 

@@ -25,8 +25,8 @@ public class InsertAdapter extends RecyclerView.Adapter<InsertAdapter.InsertView
     @Override
     public InsertViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(mCtx).inflate(R.layout.insert_adapter,parent, false);
-        InsertViewHolder produrctViewHolder = new InsertViewHolder(view);
-        return produrctViewHolder;
+        InsertViewHolder productViewHolder = new InsertViewHolder(view);
+        return productViewHolder;
     }
 
     @Override
@@ -37,11 +37,12 @@ public class InsertAdapter extends RecyclerView.Adapter<InsertAdapter.InsertView
         holder.texttime.setText(dataflow.getTime());
         holder.textvalue1.setText(dataflow.getIvm1());
         holder.texttype1.setText(dataflow.getType1());
-       // Log.d(TAG, "dataflow : " + InsertList.size());
-
+        Log.d(TAG, "getDate : " + dataflow.getDate());
 
 
     }
+
+    //-----------------------------------------------------------------------//
 
     @Override
     public int getItemCount() {
@@ -67,7 +68,7 @@ public class InsertAdapter extends RecyclerView.Adapter<InsertAdapter.InsertView
           //  textvalue2=itemView.findViewById(R.id.Va2);
           //  textvalue3=itemView.findViewById(R.id.Va3);
 
-            Log.d(TAG, "dataflow : " + InsertList.size());
+            Log.d(TAG, "dataflow : " + itemView);
 
         }
 
