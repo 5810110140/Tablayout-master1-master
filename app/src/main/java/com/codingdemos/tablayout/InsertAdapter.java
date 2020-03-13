@@ -24,20 +24,30 @@ public class InsertAdapter extends RecyclerView.Adapter<InsertAdapter.InsertView
 
     @Override
     public InsertViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+
+        //--------------------------------------------------------------------------------------//
+
+        // layout Page Row list
+
         View view = LayoutInflater.from(mCtx).inflate(R.layout.insert_adapter,parent, false);
         InsertViewHolder productViewHolder = new InsertViewHolder(view);
+
+        //--------------------------------------------------------------------------------------//
+
+
         return productViewHolder;
     }
 
     @Override
     public void onBindViewHolder(InsertViewHolder holder, int position) {
+
         InsertV2 dataflow = InsertList.get(position);
 
         holder.textdate.setText(dataflow.getDate());
         holder.texttime.setText(dataflow.getTime());
         holder.textvalue1.setText(dataflow.getIvm1());
         holder.texttype1.setText(dataflow.getType1());
-        Log.d(TAG, "getDate : " + dataflow.getDate());
+        Log.d(TAG, "getDate : " + getItemCount());
 
 
     }

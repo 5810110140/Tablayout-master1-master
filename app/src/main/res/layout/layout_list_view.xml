@@ -9,13 +9,19 @@
     android:orientation="vertical"
     android:weightSum="100">
 
-   <android.support.v7.widget.RecyclerView
+   <Button
+       android:id="@+id/button"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
-       android:layout_alignParentTop="true"
+       android:text="Button" />
+
+   <android.support.v7.widget.RecyclerView
        android:id="@+id/messageRecyclerView"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+
        android:orientation="horizontal"
-       tools:listitem="@layout/insert_adapter"/>
+       tools:listitem="@layout/insert_adapter" />
 
 
 </LinearLayout>

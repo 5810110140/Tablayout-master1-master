@@ -32,75 +32,92 @@ import java.util.List;
 public class Read_datatable_firebase extends AppCompatActivity {
 
     private RecyclerView recyclerView;
-    private DatabaseReference writedata;
+    //private DatabaseReference writedata;
     private FirebaseAuth auth;
     private InsertAdapter adapter;
-    private List<InsertV2> InsertList;
+    public List<InsertV2> InsertList;
     private String DataId;
     private ListView mListView;
     private int counttype;
 
-
-
-    @SuppressLint("WrongViewCast")
-    private void initView(){
-        recyclerView =findViewById(R.id.messageRecyclerView);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-    }
 
     public static final String TAG = "Insert" ;
 
     @Override
     public void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.insert_adapter);
-        //initView();
 
-//        ReadFirebaseInsert();
+        //--------------------------------------------------------------------------------------//
 
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        // layout Page Main has recyclerView
+        setContentView(R.layout.layout_list_view);
+
+        //--------------------------------------------------------------------------------------//
+
+        initView();
+
+        ReadFirebaseInsert();
+
+       // FirebaseDatabase database = FirebaseDatabase.getInstance();
         //writedata = database.getReference("TYPE");
-        writedata = FirebaseDatabase.getInstance().getReference("TYPE");
-        auth = FirebaseAuth.getInstance();
+        //writedata = FirebaseDatabase.getInstance().getReference("TYPE");
+
         FirebaseUser user  = auth.getCurrentUser();
        // DataId = user.getUid();
 
-        InsertList  = new ArrayList<>();
+       // InsertList  = new ArrayList<>();
+       // auth = FirebaseAuth.getInstance();
+       // writedata.addListenerForSingleValueEvent(new ValueEventListener() {
+        //    @Override
+         //   public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+          //          if(dataSnapshot.exists())
+            //        {
+             //         for(DataSnapshot productSnapshot:dataSnapshot.getChildren()){
+               //           InsertV2 Insertdata = productSnapshot.getValue(InsertV2.class);
+                         // Log.d(TAG, "getCourse_title : " + Insertdata.getDate());
+               //           InsertList.add(Insertdata);
+               //           Log.d(TAG, "getCourse_title : " + InsertList.size());
 
-        writedata.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    if(dataSnapshot.exists())
-                    {
-                      for(DataSnapshot productSnapshot:dataSnapshot.getChildren()){
-                          InsertV2 Insertdata = productSnapshot.getValue(InsertV2.class);
-                          Log.d(TAG, "getCourse_title : " + Insertdata.getDate());
-                          InsertList.add(Insertdata);
-                      }
+                //      }
 
-                    }
-                    adapter = new InsertAdapter(Read_datatable_firebase.this,InsertList);
-                    recyclerView.setAdapter(adapter);
+               //     }
+              //      adapter = new InsertAdapter(Read_datatable_firebase.this,InsertList);
+               //     recyclerView.setAdapter(adapter);
 
-            }
+       //     }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
+       //     @Override
+       //     public void onCancelled(@NonNull DatabaseError databaseError) {
 
-            }
-        });
-        LinearLayout menu_home = findViewById(R.id.insert_adapter);
-        menu_home.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                Intent intent = getIntent();
-                overridePendingTransition(0,0);
-                startActivity(intent);
+         //   }
+      //  });
+      //  LinearLayout menu_home = findViewById(R.id.insert_adapter);
+      //  menu_home.setOnClickListener(new View.OnClickListener(){
+      //      @Override
+      //      public void onClick(View v) {
+      //          Intent intent = getIntent();
+      //          overridePendingTransition(0,0);
+       //         startActivity(intent);
 
-            }
-        });
+       //     }
+     //   });
 
+
+
+    }
+
+    @SuppressLint("WrongViewCast")
+    private void initView(){
+
+        //--------------------------------------------------------------------------------------//
+
+        // FIX HAS
+
+        recyclerView = findViewById(R.id.messageRecyclerView);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        //--------------------------------------------------------------------------------------//
 
 
     }
@@ -125,43 +142,65 @@ public class Read_datatable_firebase extends AppCompatActivity {
         }
     }  */
 
-  /*  private void ReadFirebaseInsert(){
+    private void ReadFirebaseInsert(){
+
+
         auth = FirebaseAuth.getInstance();
-        //InsertList = new ArrayList<>();
 
+        //--------------------------------------------------------------------------------------//
 
-        writedata.addValueEventListener(new ValueEventListener() {
+        InsertList = new ArrayList<>();
+
+        DatabaseReference writedata = FirebaseDatabase.getInstance().getReference("TYPE");
+        writedata.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()){
                     for(DataSnapshot productSnapshot : dataSnapshot.getChildren()){
-                        InsertV2 iv2 =productSnapshot.getValue(InsertV2.class);
 
-                        //รอแก้ไข
-                       /* if(auth.getCurrentUser().getEmail().toString().equals(iv2.getId_insert().toString()) ){
-                            InsertList.add(iv2);
-                        }*/
-            //            Log.d(TAG,"iv2.getDate"+ iv2.getDate().toString());
+                        InsertV2 Insertdata =productSnapshot.getValue(InsertV2.class);
+                        InsertList.add(Insertdata);
+
+                       // Log.d(TAG,"iv2.getDate"+ iv2.getDate().toString());
                        // Log.d(TAG,"in2.getTime"+iv2.getTime().toString());
 
+                        Log.d(TAG, "getCourse_title : " + InsertList.size());
 
-             //       }
 
-                    //adapter = new InsertAdapter(Read_datatable_firebase.this, InsertList);
+                    }
+
+                    adapter = new InsertAdapter(Read_datatable_firebase.this, InsertList);
                     //รอแก้ไข
-           //         recyclerView.setAdapter(adapter);
-          //      }
+                    recyclerView.setAdapter(adapter);
+                }
 
 
-         //   }
+            }
 
-         //   @Override
-         //   public void onCancelled(@NonNull DatabaseError databaseError) {
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-       //     }
-     //   });
+            }
+        });
 
-  //  }*/
+
+        //--------------------------------------------------------------------------------------//
+
+
+
+//        LinearLayout menu_home = findViewById(R.id.insert_adapter);
+//        menu_home.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = getIntent();
+//                overridePendingTransition(0,0);
+//                startActivity(intent);
+//
+//            }
+//        });
+
+
+    }
 
 
 
