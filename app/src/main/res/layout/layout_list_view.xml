@@ -7,15 +7,36 @@
     tools:context="com.codingdemos.tablayout.Read_datatable_firebase"
     android:id="@+id/list_view"
     android:orientation="vertical"
+    android:background="#F8F5F5"
+
     android:weightSum="100">
+
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical">
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="45dp"
+          android:layout_gravity="center_vertical"
+          android:background="#00695C"
+          android:gravity="center_horizontal"
+          android:text="ประวัติการปลูก"
+          android:textAlignment="center"
+          android:textColor="#F7F5F5"
+          android:textSize="30sp" />
+
+   </RelativeLayout>
 
 
 
    <android.support.v7.widget.RecyclerView
        android:id="@+id/messageRecyclerView"
+       android:layout_marginTop="6dp"
+       android:layout_marginBottom="6dp"
        android:layout_width="match_parent"
        android:layout_height="match_parent"
-
        android:orientation="horizontal"
        tools:listitem="@layout/insert_adapter" />
 

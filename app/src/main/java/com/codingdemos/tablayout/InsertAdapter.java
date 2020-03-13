@@ -47,6 +47,7 @@ public class InsertAdapter extends RecyclerView.Adapter<InsertAdapter.InsertView
         holder.texttime.setText(dataflow.getTime());
         holder.textvalue1.setText(dataflow.getIvm1());
         holder.texttype1.setText(dataflow.getType1());
+        holder.textrow.setText(dataflow.getRow());
         Log.d(TAG, "getDate : " + getItemCount());
 
 
@@ -63,6 +64,7 @@ public class InsertAdapter extends RecyclerView.Adapter<InsertAdapter.InsertView
 
         public TextView texttype1, texttype2, texttype3, textvalue1, textvalue2,textvalue3;
         public TextView textdate, texttime;
+        public TextView textrow;
 
         public InsertViewHolder(View itemView){
             super(itemView);
@@ -77,6 +79,8 @@ public class InsertAdapter extends RecyclerView.Adapter<InsertAdapter.InsertView
             textvalue1=itemView.findViewById(R.id.Va1);
           //  textvalue2=itemView.findViewById(R.id.Va2);
           //  textvalue3=itemView.findViewById(R.id.Va3);
+
+            textrow=itemView.findViewById(R.id.row);
 
             Log.d(TAG, "dataflow : " + itemView);
 

@@ -58,49 +58,49 @@ public class Read_datatable_firebase extends AppCompatActivity {
 
         ReadFirebaseInsert();
 
-       // FirebaseDatabase database = FirebaseDatabase.getInstance();
+        // FirebaseDatabase database = FirebaseDatabase.getInstance();
         //writedata = database.getReference("TYPE");
         //writedata = FirebaseDatabase.getInstance().getReference("TYPE");
 
         FirebaseUser user  = auth.getCurrentUser();
-       // DataId = user.getUid();
+        // DataId = user.getUid();
 
-       // InsertList  = new ArrayList<>();
-       // auth = FirebaseAuth.getInstance();
-       // writedata.addListenerForSingleValueEvent(new ValueEventListener() {
+        // InsertList  = new ArrayList<>();
+        // auth = FirebaseAuth.getInstance();
+        // writedata.addListenerForSingleValueEvent(new ValueEventListener() {
         //    @Override
-         //   public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-          //          if(dataSnapshot.exists())
-            //        {
-             //         for(DataSnapshot productSnapshot:dataSnapshot.getChildren()){
-               //           InsertV2 Insertdata = productSnapshot.getValue(InsertV2.class);
-                         // Log.d(TAG, "getCourse_title : " + Insertdata.getDate());
-               //           InsertList.add(Insertdata);
-               //           Log.d(TAG, "getCourse_title : " + InsertList.size());
+        //   public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+        //          if(dataSnapshot.exists())
+        //        {
+        //         for(DataSnapshot productSnapshot:dataSnapshot.getChildren()){
+        //           InsertV2 Insertdata = productSnapshot.getValue(InsertV2.class);
+        // Log.d(TAG, "getCourse_title : " + Insertdata.getDate());
+        //           InsertList.add(Insertdata);
+        //           Log.d(TAG, "getCourse_title : " + InsertList.size());
 
-                //      }
+        //      }
 
-               //     }
-              //      adapter = new InsertAdapter(Read_datatable_firebase.this,InsertList);
-               //     recyclerView.setAdapter(adapter);
+        //     }
+        //      adapter = new InsertAdapter(Read_datatable_firebase.this,InsertList);
+        //     recyclerView.setAdapter(adapter);
 
-       //     }
+        //     }
 
-       //     @Override
-       //     public void onCancelled(@NonNull DatabaseError databaseError) {
+        //     @Override
+        //     public void onCancelled(@NonNull DatabaseError databaseError) {
 
-         //   }
-      //  });
-      //  LinearLayout menu_home = findViewById(R.id.insert_adapter);
-      //  menu_home.setOnClickListener(new View.OnClickListener(){
-      //      @Override
-      //      public void onClick(View v) {
-      //          Intent intent = getIntent();
-      //          overridePendingTransition(0,0);
-       //         startActivity(intent);
+        //   }
+        //  });
+        //  LinearLayout menu_home = findViewById(R.id.insert_adapter);
+        //  menu_home.setOnClickListener(new View.OnClickListener(){
+        //      @Override
+        //      public void onClick(View v) {
+        //          Intent intent = getIntent();
+        //          overridePendingTransition(0,0);
+        //         startActivity(intent);
 
-       //     }
-     //   });
+        //     }
+        //   });
 
 
 
@@ -130,7 +130,6 @@ public class Read_datatable_firebase extends AppCompatActivity {
             insertInfo.setType1(ds.child(DataId).getValue(InsertV2.class).getType1());
             insertInfo.setTvm1(ds.child(DataId).getValue(InsertV2.class).getIvm1());
             insertInfo.setRow(ds.child(DataId).getValue(InsertV2.class).getRow());
-
             ArrayList<String> arrays = new ArrayList<>();
             arrays.add(insertInfo.getDate());
             arrays.add(insertInfo.getTime());
@@ -161,8 +160,8 @@ public class Read_datatable_firebase extends AppCompatActivity {
                         InsertV2 Insertdata =productSnapshot.getValue(InsertV2.class);
                         InsertList.add(Insertdata);
 
-                       // Log.d(TAG,"iv2.getDate"+ iv2.getDate().toString());
-                       // Log.d(TAG,"in2.getTime"+iv2.getTime().toString());
+                        // Log.d(TAG,"iv2.getDate"+ iv2.getDate().toString());
+                        // Log.d(TAG,"in2.getTime"+iv2.getTime().toString());
 
                         Log.d(TAG, "getCourse_title : " + InsertList.size());
 

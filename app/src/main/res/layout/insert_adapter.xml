@@ -6,42 +6,84 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:weightSum="100"
+    android:background="#E9FAF3"
     tools:context="com.codingdemos.tablayout.Read_datatable_firebase">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="100dp">
 
-        <TextView
-            android:id="@+id/Tdate"
-            android:layout_width="100dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_horizontal"
-            android:gravity="center"
-            android:text="@string/textview"
-            android:textAlignment="center" />
+        <RelativeLayout
+            android:layout_width="match_parent"
 
-        <TextView
-            android:id="@+id/Ttime"
-            android:layout_width="60dp"
-            android:layout_height="match_parent"
+            android:layout_height="100dp">
 
-            android:gravity="center"
-            android:text="@string/textview" />
+            <TextView
+                android:id="@+id/Tdate"
+                android:background="#004D40"
+                android:textColor="#FFFDFD"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="center_horizontal"
 
-        <TextView
-            android:id="@+id/Va1"
-            android:layout_width="60dp"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="@string/textview" />
+                android:gravity="left"
+                android:text="วันที่"
+                android:textAlignment="textStart"
+                tools:ignore="RtlCompat" />
 
-        <TextView
-            android:id="@+id/type1"
-            android:layout_width="60dp"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="ชนิดเห็ด" />
+            <TextView
+                android:id="@+id/Ttime"
+                android:layout_width="80dp"
+                android:layout_height="51dp"
+                android:layout_below="@+id/Tdate"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginStart="7dp"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="เวลาที่ปลูก" />
 
+            <TextView
+                android:id="@+id/Va1"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="26dp"
+                android:layout_marginLeft="26dp"
+                android:layout_toEndOf="@+id/type1"
+                android:layout_toRightOf="@+id/type1"
+                android:gravity="center"
+                android:text="จำนวน" />
+
+            <TextView
+                android:id="@+id/type1"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="50dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="0dp"
+                android:layout_toEndOf="@+id/Ttime"
+                android:layout_toRightOf="@+id/Ttime"
+                android:gravity="center"
+                android:text="ชนิดเห็ด" />
+
+            <TextView
+                android:id="@+id/row"
+                android:layout_width="39dp"
+                android:layout_height="81dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="21dp"
+                android:layout_marginLeft="21dp"
+                android:layout_marginTop="12dp"
+                android:layout_toEndOf="@+id/Va1"
+                android:layout_toRightOf="@+id/Va1"
+                android:gravity="center"
+                android:text="Row"
+                android:textAlignment="center" />
+        </RelativeLayout>
     </LinearLayout>
 </LinearLayout>
