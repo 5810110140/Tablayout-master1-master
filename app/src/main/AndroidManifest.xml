@@ -31,6 +31,7 @@
         <activity android:name=".Recorder1"/>
         <activity android:name=".InsertAdapter" />
         <activity android:name=".Read_datatable_firebase"/>
+        <activity android:name=".Read_Harvest_Firebase"/>
         <activity android:name="Harvest"/>
         <activity android:name="Row_inthe_box"/>
 

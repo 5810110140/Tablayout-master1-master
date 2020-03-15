@@ -43,8 +43,8 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_alignParentTop="true"
+            android:layout_marginTop="15dp"
             android:gravity="center_horizontal"
-            android:layout_marginTop="48dp"
             android:text="เลือกชนิดเห็ด"
             android:textAlignment="center"
             android:textSize="25sp" />
@@ -57,7 +57,7 @@
 
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="406dp"
-            android:entries="@array/mushroom"
+            android:entries="@array/mushroomเguide"
             android:background="#F3F2F2"
             android:textAlignment="center">
 

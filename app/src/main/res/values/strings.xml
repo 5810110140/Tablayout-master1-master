@@ -22,6 +22,16 @@
         <item>เห็ดโคนญี่ปุ่น</item>
     </array>
 
+    <array name="mushroomเguide">
+        <item>ชนิดเห็ด</item>
+        <item>เห็ดนางฟ้า</item>
+        <item>เห็ดหอม</item>
+        <item>เห็ดหูหนู</item>
+        <item>เห็ดนางรม</item>
+        <item>เห็ดขอนขาว</item>
+        <item>เห็ดโคนญี่ปุ่น</item>
+    </array>
+
     <array name="Total">
         <item>1 ก้อน</item>
         <item>1 ก้อน</item>

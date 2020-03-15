@@ -25,7 +25,7 @@ import java.util.Calendar;
 
 public class Harvest extends AppCompatActivity {
 
-    Button mTDate,btnSave;
+    Button mTDate,btnSave,btnreturn,recorder_harvest;
     TextView Weighttext;
     TextView textdate;
     Calendar c;
@@ -38,12 +38,28 @@ public class Harvest extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.harvest_insert);
 
+        btnreturn = findViewById(R.id.backpage);
         mTDate =  findViewById(R.id.btndate);
         btnSave = findViewById(R.id.btnsave);
         Stypemushroom = findViewById(R.id.spinner1);
         Svaluemushroom = findViewById(R.id.spinner2);
         Weighttext = findViewById(R.id.weighttext);
         textdate = findViewById(R.id.iddate);
+        recorder_harvest = findViewById(R.id.historyrec);
+
+        btnreturn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openMainPage();
+            }
+        });
+
+        recorder_harvest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openRecorderHarvest();
+            }
+        });
 
 
 
@@ -78,6 +94,8 @@ public class Harvest extends AppCompatActivity {
             }
         });
 
+
+
     }
 
     private void addData() {
@@ -106,6 +124,15 @@ public class Harvest extends AppCompatActivity {
 
     public  void openDataFragment(){
         Intent intent = new Intent(this, Harvest.class);
+        startActivity(intent);
+    }
+
+    public  void openMainPage(){
+        Intent intent = new Intent(this,MainActivity.class);
+        startActivity(intent);
+    }
+    public  void openRecorderHarvest(){
+        Intent intent = new Intent(this,Read_Harvest_Firebase.class);
         startActivity(intent);
     }
 }

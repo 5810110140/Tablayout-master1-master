@@ -49,7 +49,7 @@
             android:layout_alignParentTop="true"
             android:layout_marginStart="28dp"
             android:layout_marginLeft="28dp"
-            android:layout_marginTop="18dp"
+            android:layout_marginTop="15sp"
 
 
             android:layout_toEndOf="@+id/mushtype1"
@@ -63,8 +63,8 @@
             android:layout_height="55dp"
             android:layout_alignParentTop="true"
             android:layout_gravity="center"
-            android:layout_marginStart="18dp"
-            android:layout_marginLeft="18dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginLeft="12dp"
             android:layout_marginTop="52dp"
             android:layout_toEndOf="@+id/mushtype1"
             android:layout_toRightOf="@+id/mushtype1"
@@ -72,16 +72,17 @@
             android:entries="@array/Total"
             android:textAlignment="center" />
 
+
         <Button
             android:id="@+id/btndate"
             android:layout_width="100dp"
             android:layout_height="60dp"
-            android:layout_below="@+id/slotvalue1"
+            android:layout_below="@+id/mushtype1"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
-            android:layout_marginStart="17dp"
-            android:layout_marginLeft="17dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginStart="63dp"
+            android:layout_marginLeft="63dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="68dp"
 
             android:layout_marginRight="68dp"
@@ -95,9 +96,9 @@
             android:layout_below="@+id/slotvalue1"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
-            android:layout_marginStart="135dp"
-            android:layout_marginLeft="135dp"
-            android:layout_marginTop="26dp"
+            android:layout_marginStart="191dp"
+            android:layout_marginLeft="191dp"
+            android:layout_marginTop="14dp"
             android:text="เลือกเวลา" />
 
         <TextView
@@ -106,31 +107,30 @@
             android:layout_height="45dp"
 
             android:layout_below="@+id/btntime"
-            android:layout_marginStart="14dp"
-            android:layout_marginLeft="14dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="24dp"
             android:layout_toEndOf="@+id/textdate"
             android:layout_toRightOf="@+id/textdate"
             android:gravity="center"
             android:text="Time"
             android:textAlignment="center"
-            android:textSize="30sp" />
-
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/textdate"
-            android:layout_width="100dp"
+            android:layout_width="110dp"
             android:layout_height="45dp"
             android:layout_below="@+id/btndate"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
-            android:layout_marginStart="17dp"
-            android:layout_marginLeft="17dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginStart="47dp"
+            android:layout_marginLeft="47dp"
+            android:layout_marginTop="24dp"
             android:gravity="center"
             android:text="Date"
             android:textAlignment="center"
-            android:textSize="30sp" />
+            android:textSize="20sp" />
 
         <Spinner
             android:id="@+id/mushtype1"
@@ -152,8 +152,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="28dp"
-            android:layout_marginLeft="28dp"
+            android:layout_marginStart="33dp"
+            android:layout_marginLeft="33dp"
             android:layout_marginTop="15dp"
             android:layout_toEndOf="@+id/slotvalue1"
             android:layout_toRightOf="@+id/slotvalue1"
@@ -162,8 +162,8 @@
 
         <Spinner
             android:id="@+id/row"
-            android:layout_width="65dp"
-            android:layout_height="54dp"
+            android:layout_width="100dp"
+            android:layout_height="55dp"
             android:layout_below="@+id/textView2"
             android:layout_gravity="center"
             android:layout_marginStart="12dp"
@@ -182,27 +182,19 @@
 
         <Button
             android:id="@+id/return1"
-            android:layout_width="95dp"
-            android:layout_height="55dp"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
             android:layout_below="@+id/btnsave"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_marginStart="130dp"
-            android:layout_marginLeft="130dp"
-            android:layout_marginTop="19dp"
+            android:layout_marginTop="6dp"
             android:background="@color/colorbutton"
             android:text="ย้อนกลับ"
             android:textColor="#FAFAFA" />
 
         <Button
             android:id="@+id/btnsave"
-            android:layout_width="95dp"
-            android:layout_height="55dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="130dp"
-            android:layout_marginLeft="130dp"
             android:layout_marginTop="6dp"
             android:background="@color/colorbutton"
             android:text="บันทึก"

@@ -130,22 +130,40 @@
         </TextView>
 
     </RelativeLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp">
+        android:layout_height="200dp">
+
+        <Button
+            android:id="@+id/backpage"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="77dp"
+            android:background="@color/colorbutton"
+            android:text="ย้อนกลับ"
+            android:textColor="#FAFAFA" />
 
         <Button
             android:id="@+id/btnsave"
-            android:layout_width="95dp"
-            android:layout_height="55dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="166dp"
-            android:layout_marginRight="166dp"
-            android:layout_marginBottom="24dp"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="7dp"
+
             android:background="@color/colorbutton"
             android:text="บันทึก"
+            android:textColor="#FAFAFA" />
+
+        <Button
+            android:id="@+id/historyrec"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="118dp"
+            android:background="@color/colorbutton"
+            android:text="ประวัติการบันทึก"
             android:textColor="#FAFAFA" />
     </RelativeLayout>
 

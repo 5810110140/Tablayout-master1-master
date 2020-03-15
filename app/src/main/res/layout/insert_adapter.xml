@@ -6,84 +6,153 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:weightSum="100"
-    android:background="#E9FAF3"
+    android:background="#F9FAF9"
     tools:context="com.codingdemos.tablayout.Read_datatable_firebase">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp">
+        android:layout_height="130dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
+            android:layout_height="130dp">
 
-            android:layout_height="100dp">
+            <TextView
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="3dp"
+                android:background="#023F30"
+                android:gravity="center"
+
+                android:text="วัน/เดือน/ปี"
+                android:textColor="#FFFDFD"
+
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/Tdate"
-                android:background="#004D40"
-                android:textColor="#FFFDFD"
-                android:layout_width="match_parent"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
                 android:layout_gravity="center_horizontal"
-
+                android:layout_marginStart="110dp"
+                android:layout_marginLeft="110dp"
+                android:layout_marginTop="3dp"
+                android:background="#023F30"
                 android:gravity="left"
                 android:text="วันที่"
                 android:textAlignment="textStart"
+                android:textColor="#FFFDFD"
+                android:textSize="15sp"
                 tools:ignore="RtlCompat" />
 
             <TextView
                 android:id="@+id/Ttime"
-                android:layout_width="80dp"
-                android:layout_height="51dp"
-                android:layout_below="@+id/Tdate"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentLeft="true"
-                android:layout_marginStart="7dp"
-                android:layout_marginLeft="7dp"
-                android:layout_marginTop="8dp"
-                android:gravity="center"
-                android:text="เวลาที่ปลูก" />
-
-            <TextView
-                android:id="@+id/Va1"
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
-                android:layout_marginStart="26dp"
-                android:layout_marginLeft="26dp"
-                android:layout_toEndOf="@+id/type1"
-                android:layout_toRightOf="@+id/type1"
-                android:gravity="center"
-                android:text="จำนวน" />
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="3dp"
+                android:layout_toEndOf="@+id/Tdate"
+                android:layout_toRightOf="@+id/Tdate"
+                android:background="#023F30"
+                android:gravity="left"
+                android:text="เวลาที่ปลูก"
+                android:textColor="#FFFDFD"
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/type1"
-                android:layout_width="60dp"
-                android:layout_height="match_parent"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="50dp"
-                android:layout_marginLeft="50dp"
-                android:layout_marginTop="0dp"
-                android:layout_toEndOf="@+id/Ttime"
-                android:layout_toRightOf="@+id/Ttime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="33dp"
+                android:layout_marginLeft="33dp"
+                android:layout_marginBottom="30dp"
                 android:gravity="center"
-                android:text="ชนิดเห็ด" />
+                android:text="ชนิดเห็ด"
+                android:textColor="#131212"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/row"
-                android:layout_width="39dp"
-                android:layout_height="81dp"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="21dp"
-                android:layout_marginLeft="21dp"
-                android:layout_marginTop="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="27dp"
+                android:layout_marginLeft="27dp"
+                android:layout_marginBottom="32dp"
                 android:layout_toEndOf="@+id/Va1"
                 android:layout_toRightOf="@+id/Va1"
                 android:gravity="center"
-                android:text="Row"
-                android:textAlignment="center" />
+                android:text="แถว"
+                android:textAlignment="center"
+                android:textColor="#131212"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/Va1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginBottom="30dp"
+                android:layout_toEndOf="@+id/type1"
+                android:layout_toRightOf="@+id/type1"
+                android:gravity="center"
+                android:text="จำนวน"
+                android:textColor="#131212"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/type1"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginStart="33dp"
+                android:layout_marginLeft="33dp"
+                android:layout_marginBottom="18dp"
+                android:text="ชนิดเห็ด"
+                android:textColor="#131212"
+
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/Va1"
+                android:layout_marginStart="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginBottom="18dp"
+                android:layout_toEndOf="@+id/textView3"
+                android:layout_toRightOf="@+id/textView3"
+                android:text="จำนวน"
+                android:textColor="#131212"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/row"
+                android:layout_marginStart="26dp"
+                android:layout_marginLeft="26dp"
+                android:layout_marginBottom="18dp"
+                android:layout_toEndOf="@+id/textView4"
+                android:layout_toRightOf="@+id/textView4"
+                android:text="แถว"
+                android:textColor="#131212"
+                android:textSize="20sp" />
+
         </RelativeLayout>
     </LinearLayout>
 </LinearLayout>
