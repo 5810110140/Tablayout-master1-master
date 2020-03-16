@@ -18,7 +18,7 @@
             android:layout_gravity="center_vertical"
             android:background="#00695C"
             android:gravity="center_horizontal"
-            android:text="ประวัติก่ารเก็บเห็ด"
+            android:text="ประวัติการเก็บเห็ด"
             android:textAlignment="center"
             android:textColor="#F7F5F5"
             android:textSize="30sp" />

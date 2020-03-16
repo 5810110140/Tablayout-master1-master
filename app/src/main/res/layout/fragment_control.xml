@@ -55,6 +55,8 @@
         android:layout_marginTop="23dp"
         android:layout_toEndOf="@+id/textwaterpipe"
         android:layout_toRightOf="@+id/textwaterpipe"
+        android:textOff="ปิด"
+        android:textOn="เปิด"
         android:text="@string/togglebutton" />
 
 
@@ -105,6 +107,8 @@
         android:layout_marginTop="25dp"
         android:layout_toEndOf="@+id/textcoolingfan"
         android:layout_toRightOf="@+id/textcoolingfan"
+        android:textOff="ปิด"
+        android:textOn="เปิด"
         android:text="@string/togglebutton" />
 
 
@@ -155,6 +159,8 @@
         android:layout_marginTop="22dp"
         android:layout_toEndOf="@+id/textheater"
         android:layout_toRightOf="@+id/textheater"
+        android:textOff="ปิด"
+        android:textOn="เปิด"
         android:text="@string/togglebutton" />
 
 

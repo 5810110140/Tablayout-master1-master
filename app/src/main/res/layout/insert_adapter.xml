@@ -80,37 +80,6 @@
                 android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/row"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_marginStart="27dp"
-                android:layout_marginLeft="27dp"
-                android:layout_marginBottom="32dp"
-                android:layout_toEndOf="@+id/Va1"
-                android:layout_toRightOf="@+id/Va1"
-                android:gravity="center"
-                android:text="แถว"
-                android:textAlignment="center"
-                android:textColor="#131212"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/Va1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_marginStart="30dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginBottom="30dp"
-                android:layout_toEndOf="@+id/type1"
-                android:layout_toRightOf="@+id/type1"
-                android:gravity="center"
-                android:text="จำนวน"
-                android:textColor="#131212"
-                android:textSize="20sp" />
-
-            <TextView
                 android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -130,11 +99,26 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_above="@+id/Va1"
-                android:layout_marginStart="30dp"
-                android:layout_marginLeft="30dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginStart="145dp"
+                android:layout_marginLeft="145dp"
                 android:layout_marginBottom="18dp"
-                android:layout_toEndOf="@+id/textView3"
-                android:layout_toRightOf="@+id/textView3"
+                android:text="จำนวน"
+                android:textColor="#131212"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/Va1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="145dp"
+                android:layout_marginLeft="145dp"
+                android:layout_marginBottom="30dp"
+                android:gravity="center"
                 android:text="จำนวน"
                 android:textColor="#131212"
                 android:textSize="20sp" />
@@ -144,12 +128,28 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_above="@+id/row"
-                android:layout_marginStart="26dp"
-                android:layout_marginLeft="26dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginStart="242dp"
+                android:layout_marginLeft="242dp"
                 android:layout_marginBottom="18dp"
-                android:layout_toEndOf="@+id/textView4"
-                android:layout_toRightOf="@+id/textView4"
                 android:text="แถว"
+                android:textColor="#131212"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/row"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="244dp"
+                android:layout_marginLeft="244dp"
+                android:layout_marginBottom="30dp"
+                android:gravity="center"
+                android:text="แถว"
+                android:textAlignment="center"
                 android:textColor="#131212"
                 android:textSize="20sp" />
 
