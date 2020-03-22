@@ -32,7 +32,7 @@ import static android.content.Context.MODE_PRIVATE;
 public class ControlFragment extends Fragment {
 
     ToggleButton waterpipe,coolingfan,heating;
-    public DatabaseReference refwater;
+    private DatabaseReference refwater;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -44,10 +44,10 @@ public class ControlFragment extends Fragment {
         waterpipe = rootview.findViewById(R.id.toggleButtonpipe);
         coolingfan = rootview.findViewById(R.id.toggleButtonfan);
         heating = rootview.findViewById(R.id.toggleButtonheater);
-        refwater = FirebaseDatabase.getInstance().getReference();
+        refwater = FirebaseDatabase.getInstance().getReference("waterstatus");
 
         //save switch state
-       // SharedPreferences sharedPreferences1 = getContext().getSharedPreferences("save1",MODE_PRIVATE);
+        SharedPreferences sharedPreferences1 = getContext().getSharedPreferences("save1",MODE_PRIVATE);
         SharedPreferences sharedPreferences2 = getContext().getSharedPreferences("save2",MODE_PRIVATE);
         SharedPreferences sharedPreferences3 = getContext().getSharedPreferences("save3",MODE_PRIVATE);
 
@@ -55,7 +55,7 @@ public class ControlFragment extends Fragment {
 
 
 
-        refwater.child("waterstatus").addListenerForSingleValueEvent(new ValueEventListener() {
+        /*refwater.child("waterstatus").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
@@ -69,7 +69,7 @@ public class ControlFragment extends Fragment {
                 waterpipe.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                     @Override
                     public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
-                            FirebaseDatabase database = FirebaseDatabase.getInstance();
+                          //  FirebaseDatabase database = FirebaseDatabase.getInstance();
                            // DatabaseReference myRef = database.getReference("waterstatus");
                             refwater.child("waterstatus").setValue("0");
                             SharedPreferences.Editor editor = getContext().getSharedPreferences("save1",
@@ -104,21 +104,23 @@ public class ControlFragment extends Fragment {
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
-        });
+        }); */
 
         //switch waterpipe
-      /*  waterpipe.setChecked(sharedPreferences1.getBoolean("value1",true));
+        waterpipe.setChecked(sharedPreferences1.getBoolean("value1",true));
         waterpipe.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
                 if(isChecked){
-                    FirebaseDatabase database = FirebaseDatabase.getInstance();
-                    DatabaseReference myRef = database.getReference("waterstatus");
+                    //FirebaseDatabase database = FirebaseDatabase.getInstance();
+                    DatabaseReference myRef = refwater.child("waterstatus");
+                    DatabaseReference myRef2 =refwater.child("statustext");
                     SharedPreferences.Editor editor = getContext().getSharedPreferences("save1",
                             MODE_PRIVATE).edit();
                     editor.putBoolean("value1",true);
                     editor.apply();
-                    myRef.setValue(1);
+                    myRef.setValue("1");
+                    myRef2.setValue("เปิด");
                     waterpipe.setChecked(true);
                 }
                 else {
@@ -128,12 +130,11 @@ public class ControlFragment extends Fragment {
                             MODE_PRIVATE).edit();
                     editor.putBoolean("value1",false);
                     editor.apply();
-                    myRef.setValue(0);
+                    myRef.setValue("0");
                     waterpipe.setChecked(false);
-
                 }
             }
-        }); */
+        });
 
         //switch coolingfan
         coolingfan.setChecked(sharedPreferences2.getBoolean("value2",true));
@@ -147,7 +148,7 @@ public class ControlFragment extends Fragment {
                             MODE_PRIVATE).edit();
                     editor.putBoolean("value2",true);
                     editor.apply();
-                    myRef.setValue(1);
+                    myRef.setValue("1");
                     coolingfan.setChecked(true);
 
 
@@ -159,7 +160,7 @@ public class ControlFragment extends Fragment {
                             MODE_PRIVATE).edit();
                     editor.putBoolean("value2",false);
                     editor.apply();
-                    myRef.setValue(0);
+                    myRef.setValue("0");
                     coolingfan.setChecked(false);
                 }
             }
@@ -177,7 +178,7 @@ public class ControlFragment extends Fragment {
                             MODE_PRIVATE).edit();
                     editor.putBoolean("value3",true);
                     editor.apply();
-                    myRef.setValue(1);
+                    myRef.setValue("1");
                     heating.setChecked(true);
                 }
                 else {
@@ -187,7 +188,7 @@ public class ControlFragment extends Fragment {
                             MODE_PRIVATE).edit();
                     editor.putBoolean("value3",false);
                     editor.apply();
-                    myRef.setValue(0);
+                    myRef.setValue("0");
                     heating.setChecked(false);
 
                 }

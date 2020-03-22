@@ -109,7 +109,9 @@
         android:layout_toRightOf="@+id/textcoolingfan"
         android:textOff="ปิด"
         android:textOn="เปิด"
-        android:text="@string/togglebutton" />
+        android:text="@string/togglebutton"
+        />
+
 
 
   </RelativeLayout>

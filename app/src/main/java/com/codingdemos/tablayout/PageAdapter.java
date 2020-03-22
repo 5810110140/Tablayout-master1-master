@@ -24,7 +24,7 @@ public class PageAdapter extends FragmentPagerAdapter {
             case 0:
                 return new StatusFragment();
             case 1:
-                return new ControlFragment();
+                return new ControlFragmentV2();
             case 2:
                 return new DataFragment();
             default:

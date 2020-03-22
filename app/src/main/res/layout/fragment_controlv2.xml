@@ -1,0 +1,289 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#19191B"
+    tools:context="com.codingdemos.tablayout.ControlFragmentV2"
+    android:id="@+id/fragmentcontrolV2">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:id="@+id/layoutpipe"
+        android:layout_width="match_parent"
+        android:layout_height="100sp"
+        android:background="#DFF2FA"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+        >
+
+        <Button
+            android:id="@+id/Btn_waterON"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="87dp"
+            android:layout_marginLeft="87dp"
+            android:layout_marginTop="21dp"
+            android:layout_toEndOf="@+id/textwaterpipe"
+            android:layout_toRightOf="@+id/textwaterpipe"
+            android:text="เปิด" />
+
+        <ImageView
+            android:id="@+id/picpipe"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="27dp"
+            android:layout_marginTop="26dp"
+            android:src="@drawable/pipes"
+            android:contentDescription="TODO" />
+
+        <TextView
+            android:id="@+id/textwaterpipe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="39dp"
+            android:layout_toEndOf="@+id/picpipe"
+            android:layout_toRightOf="@+id/picpipe"
+            android:text="Waterpipe"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/Btn_WaterOFF"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="17dp"
+            android:layout_marginLeft="17dp"
+            android:layout_marginTop="21dp"
+            android:layout_toEndOf="@+id/textwaterpipe"
+            android:layout_toRightOf="@+id/textwaterpipe"
+            android:text="ปิด" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="8dp"
+        android:background="#DFF2FA"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_CoolingON"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="83dp"
+            android:layout_marginLeft="83dp"
+            android:layout_marginTop="22dp"
+            android:layout_toEndOf="@+id/textcoolingfan"
+            android:layout_toRightOf="@+id/textcoolingfan"
+            android:text="เปิด" />
+
+        <Button
+            android:id="@+id/btn_CoolingOFF"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="22dp"
+            android:layout_toEndOf="@+id/textcoolingfan"
+            android:layout_toRightOf="@+id/textcoolingfan"
+            android:text="ปิด" />
+
+        <ImageView
+            android:id="@+id/piccoolingfan"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="27dp"
+            android:layout_marginTop="22dp"
+            android:src="@drawable/coolingfan1" />
+
+        <TextView
+            android:id="@+id/textcoolingfan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="41dp"
+            android:layout_toEndOf="@+id/piccoolingfan"
+            android:layout_toRightOf="@+id/piccoolingfan"
+            android:text="Coolingfan"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="20dp" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        android:background="#DFF2FA"
+        android:layout_marginTop="8dp">
+
+        <Button
+            android:id="@+id/btn_HeatingON"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="107dp"
+            android:layout_marginLeft="107dp"
+            android:layout_marginTop="19dp"
+            android:layout_toEndOf="@+id/textheater"
+            android:layout_toRightOf="@+id/textheater"
+            android:text="เปิด" />
+
+        <Button
+            android:id="@+id/btn_HeatingOFF"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="39dp"
+            android:layout_marginLeft="39dp"
+            android:layout_marginTop="21dp"
+            android:layout_toEndOf="@+id/textheater"
+            android:layout_toRightOf="@+id/textheater"
+            android:text="ปิด" />
+
+        <ImageView
+            android:id="@+id/heater"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="27dp"
+            android:layout_marginTop="22dp"
+            android:src="@drawable/heating"
+            />
+
+        <TextView
+            android:id="@+id/textheater"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="38dp"
+            android:layout_toEndOf="@id/heater"
+            android:layout_toRightOf="@id/heater"
+            android:text="Heating"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="20dp" />
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:orientation="horizontal"
+        android:background="#DFF2FA"
+        android:layout_marginTop="8dp" >
+
+        <TextView
+            android:id="@+id/state_heating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="244dp"
+            android:layout_marginLeft="244dp"
+            android:layout_marginTop="98dp"
+            android:text="ค่าการทำงาน"
+            android:textColor="#000000"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/state_cooling"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="242dp"
+            android:layout_marginLeft="242dp"
+            android:layout_marginTop="59dp"
+            android:text="ค่าการทำงาน"
+            android:textColor="#000000"
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="21dp"
+            android:text="สถานะการณ์ทำงานปั้มน้ำ"
+            android:textColor="#000000"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:id="@+id/state_waterpump"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="243dp"
+            android:layout_marginLeft="243dp"
+            android:layout_marginTop="21dp"
+            android:text="ค่าการทำงาน"
+            android:textColor="#000000"
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="59dp"
+            android:text="สถานะการณ์ทำงานพัดลม"
+            android:textColor="#000000"
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="99dp"
+            android:text="สถานะการณ์ทำงาน"
+            android:textColor="#000000"
+            android:textSize="20dp" />
+
+
+    </RelativeLayout>
+
+</LinearLayout>
