@@ -45,7 +45,7 @@ public class ControlFragmentV2 extends Fragment {
 
         WaterOff = rootview.findViewById(R.id.Btn_WaterOFF);
         WaterOn = rootview.findViewById(R.id.Btn_waterON);
-        refWater = FirebaseDatabase.getInstance().getReference("waterpump");
+        refWater = FirebaseDatabase.getInstance().getReference("Node").child("RELAY1");
         StateWater = rootview.findViewById(R.id.state_waterpump);
 
         CoolingOff = rootview.findViewById(R.id.btn_CoolingOFF);
@@ -70,8 +70,8 @@ public class ControlFragmentV2 extends Fragment {
         WaterOff.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DatabaseReference state = refWater.child("waterstatus");
-                DatabaseReference text =refWater.child("statustext");
+                DatabaseReference state = refWater.child("Pump");
+                DatabaseReference text =refWater.child("statusPump");
                 state.setValue("0");
                 text.setValue("ปิด");
 
@@ -81,8 +81,8 @@ public class ControlFragmentV2 extends Fragment {
         WaterOn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DatabaseReference state = refWater.child("waterstatus");
-                DatabaseReference text = refWater.child("statustext");
+                DatabaseReference state = refWater.child("Pump");
+                DatabaseReference text = refWater.child("statusPump");
                 state.setValue("1");
                 text.setValue("เปิด");
 
@@ -137,7 +137,7 @@ public class ControlFragmentV2 extends Fragment {
 
 
                 Map map = (Map)dataSnapshot.getValue();
-                String statetext = String.valueOf(map.get("statustext"));
+                String statetext = String.valueOf(map.get("statusPump"));
                 StateWater.setText(statetext);
             }
 

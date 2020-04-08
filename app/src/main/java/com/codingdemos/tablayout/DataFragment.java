@@ -12,18 +12,32 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class DataFragment extends Fragment {
 
+     DatabaseReference reference;
+
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         setHasOptionsMenu(true);
-        return inflater.inflate(R.layout.fragment_data, container, false);
+        View rootview = inflater.inflate(R.layout.fragment_data,container,false);
+
+
+
+        reference = FirebaseDatabase.getInstance().getReference("logDevice01");
+
+
+        return rootview;
     }
 
 
