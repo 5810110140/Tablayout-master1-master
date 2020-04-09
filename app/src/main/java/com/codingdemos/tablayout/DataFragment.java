@@ -12,8 +12,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+
+
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.jjoe64.graphview.GraphView;
+import com.jjoe64.graphview.series.DataPoint;
+import com.jjoe64.graphview.series.LineGraphSeries;
 
 
 /**
@@ -21,8 +26,11 @@ import com.google.firebase.database.FirebaseDatabase;
  */
 public class DataFragment extends Fragment {
 
-     DatabaseReference reference;
+    private GraphView mGtaphView;
 
+
+    private LineGraphSeries<DataPoint> mTempSeries;
+    private LineGraphSeries<DataPoint> mHumidSeries;
 
 
     @Override
@@ -31,10 +39,10 @@ public class DataFragment extends Fragment {
         // Inflate the layout for this fragment
         setHasOptionsMenu(true);
         View rootview = inflater.inflate(R.layout.fragment_data,container,false);
+        mGtaphView = (GraphView) rootview.findViewById(R.id.graph);
 
 
 
-        reference = FirebaseDatabase.getInstance().getReference("logDevice01");
 
 
         return rootview;
