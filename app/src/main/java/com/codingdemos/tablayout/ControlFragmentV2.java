@@ -50,12 +50,12 @@ public class ControlFragmentV2 extends Fragment {
 
         CoolingOff = rootview.findViewById(R.id.btn_CoolingOFF);
         CoolingOn = rootview.findViewById(R.id.btn_CoolingON);
-        refCooling = FirebaseDatabase.getInstance().getReference("coolingfan");
+        refCooling = FirebaseDatabase.getInstance().getReference("Node").child("RELAY2");
         Statecooling = rootview.findViewById(R.id.state_cooling);
 
         HeatingOff = rootview.findViewById(R.id.btn_HeatingOFF);
         HeatingOn = rootview.findViewById(R.id.btn_HeatingON);
-        refHeating = FirebaseDatabase.getInstance().getReference("heating");
+        refHeating = FirebaseDatabase.getInstance().getReference("Node").child("RELAY3");
         Stateheating = rootview.findViewById(R.id.state_heating);
 
         //save switch state
@@ -72,7 +72,7 @@ public class ControlFragmentV2 extends Fragment {
             public void onClick(View v) {
                 DatabaseReference state = refWater.child("Pump");
                 DatabaseReference text =refWater.child("statusPump");
-                state.setValue("0");
+                state.setValue(0);
                 text.setValue("ปิด");
 
             }
@@ -83,7 +83,7 @@ public class ControlFragmentV2 extends Fragment {
             public void onClick(View v) {
                 DatabaseReference state = refWater.child("Pump");
                 DatabaseReference text = refWater.child("statusPump");
-                state.setValue("1");
+                state.setValue(1);
                 text.setValue("เปิด");
 
             }
@@ -92,9 +92,9 @@ public class ControlFragmentV2 extends Fragment {
         CoolingOff.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DatabaseReference state = refCooling.child("coolingstatus");
-                DatabaseReference text = refCooling.child("statustext");
-                state.setValue("0");
+                DatabaseReference state = refCooling.child("CoolingFan");
+                DatabaseReference text = refCooling.child("statusCoolingFan");
+                state.setValue(0);
                 text.setValue("ปิด");
             }
         });
@@ -102,9 +102,9 @@ public class ControlFragmentV2 extends Fragment {
         CoolingOn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DatabaseReference state = refCooling.child("coolingstatus");
-                DatabaseReference text = refCooling.child("statustext");
-                state.setValue("1");
+                DatabaseReference state = refCooling.child("CoolingFan");
+                DatabaseReference text = refCooling.child("statusCoolingFan");
+                state.setValue(1);
                 text.setValue("เปิด");
             }
         });
@@ -112,9 +112,9 @@ public class ControlFragmentV2 extends Fragment {
         HeatingOff.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DatabaseReference state = refHeating.child("heatingstatus");
-                DatabaseReference text = refHeating.child("statustext");
-                state.setValue("0");
+                DatabaseReference state = refHeating.child("HeatingFan");
+                DatabaseReference text = refHeating.child("statusHeatingFan");
+                state.setValue(0);
                 text.setValue("ปิด");
             }
         });
@@ -122,9 +122,9 @@ public class ControlFragmentV2 extends Fragment {
         HeatingOn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DatabaseReference state = refHeating.child("heatingstatus");
-                DatabaseReference text = refHeating.child("statustext");
-                state.setValue("1");
+                DatabaseReference state = refHeating.child("HeatingFan");
+                DatabaseReference text = refHeating.child("statusHeatingFan");
+                state.setValue(1);
                 text.setValue("เปิด");
             }
         });
@@ -152,7 +152,7 @@ public class ControlFragmentV2 extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 Map map = (Map)dataSnapshot.getValue();
-                String statetext = String.valueOf(map.get("statustext"));
+                String statetext = String.valueOf(map.get("statusCoolingFan"));
                 Statecooling.setText(statetext);
             }
 
@@ -166,7 +166,7 @@ public class ControlFragmentV2 extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 Map map = (Map)dataSnapshot.getValue();
-                String statetext = String.valueOf(map.get("statustext"));
+                String statetext = String.valueOf(map.get("statusHeatingFan"));
                 Stateheating.setText(statetext);
             }
 
