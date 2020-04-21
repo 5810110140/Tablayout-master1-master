@@ -108,6 +108,10 @@
     <string name="setting">Setting</string>
     <string name="togglebutton">ToggleButton</string>
     <string name="textview">TextView</string>
+    <string name="textrecorder">
+        "*ข้อกำหนด\n"
+        "ในการบันทึกการปลูกต้องบันทึกหนึ่งแถวต่อหนึ่งชนิดเท่านั้น"
+    </string>
 
 
 </resources>

@@ -62,9 +62,6 @@ public class Harvest extends AppCompatActivity {
         });
 
 
-
-
-
         mTDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -93,8 +90,6 @@ public class Harvest extends AppCompatActivity {
                 reset();
             }
         });
-
-
 
     }
 

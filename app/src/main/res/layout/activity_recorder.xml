@@ -35,21 +35,20 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="55dp"
-            android:layout_marginLeft="55dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginStart="41dp"
+            android:layout_marginLeft="41dp"
+            android:layout_marginTop="13dp"
             android:text="ชนิดเห็ด"
             android:textSize="20sp" />
-
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="28dp"
-            android:layout_marginLeft="28dp"
-            android:layout_marginTop="15sp"
+            android:layout_marginStart="37dp"
+            android:layout_marginLeft="37dp"
+            android:layout_marginTop="12dp"
 
 
             android:layout_toEndOf="@+id/mushtype1"
@@ -59,64 +58,59 @@
 
         <Spinner
             android:id="@+id/slotvalue1"
-            android:layout_width="100dp"
+            android:layout_width="110dp"
             android:layout_height="55dp"
             android:layout_alignParentTop="true"
             android:layout_gravity="center"
-            android:layout_marginStart="12dp"
-            android:layout_marginLeft="12dp"
-            android:layout_marginTop="52dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="44dp"
             android:layout_toEndOf="@+id/mushtype1"
             android:layout_toRightOf="@+id/mushtype1"
             android:background="@color/spinner"
             android:entries="@array/Total"
             android:textAlignment="center" />
 
-
         <Button
             android:id="@+id/btndate"
-            android:layout_width="100dp"
+            android:layout_width="120dp"
             android:layout_height="60dp"
             android:layout_below="@+id/mushtype1"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
-            android:layout_marginStart="63dp"
-            android:layout_marginLeft="63dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginStart="59dp"
+            android:layout_marginLeft="59dp"
+            android:layout_marginTop="19dp"
             android:layout_marginEnd="68dp"
-
             android:layout_marginRight="68dp"
             android:text="เลือกวันที่" />
 
         <Button
             android:id="@+id/btntime"
-            android:layout_width="100dp"
+            android:layout_width="120dp"
             android:layout_height="60dp"
-
             android:layout_below="@+id/slotvalue1"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
-            android:layout_marginStart="191dp"
-            android:layout_marginLeft="191dp"
-            android:layout_marginTop="14dp"
+            android:layout_marginStart="231dp"
+            android:layout_marginLeft="231dp"
+            android:layout_marginTop="19dp"
             android:text="เลือกเวลา" />
 
         <TextView
             android:id="@+id/texttime"
             android:layout_width="100dp"
             android:layout_height="45dp"
-
             android:layout_below="@+id/btntime"
-            android:layout_marginStart="40dp"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginStart="62dp"
+            android:layout_marginLeft="62dp"
+            android:layout_marginTop="20dp"
             android:layout_toEndOf="@+id/textdate"
             android:layout_toRightOf="@+id/textdate"
             android:gravity="center"
             android:text="Time"
             android:textAlignment="center"
             android:textSize="20sp" />
-
         <TextView
             android:id="@+id/textdate"
             android:layout_width="110dp"
@@ -124,9 +118,9 @@
             android:layout_below="@+id/btndate"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
-            android:layout_marginStart="47dp"
-            android:layout_marginLeft="47dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginStart="69dp"
+            android:layout_marginLeft="69dp"
+            android:layout_marginTop="21dp"
             android:gravity="center"
             android:text="Date"
             android:textAlignment="center"
@@ -134,14 +128,14 @@
 
         <Spinner
             android:id="@+id/mushtype1"
-            android:layout_width="100dp"
+            android:layout_width="110dp"
             android:layout_height="55dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="17dp"
-            android:layout_marginLeft="17dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="45dp"
             android:background="@color/spinner"
             android:entries="@array/mushroom"
             android:gravity="center"
@@ -152,9 +146,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="33dp"
-            android:layout_marginLeft="33dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginStart="57dp"
+            android:layout_marginLeft="57dp"
+            android:layout_marginTop="11dp"
             android:layout_toEndOf="@+id/slotvalue1"
             android:layout_toRightOf="@+id/slotvalue1"
             android:text="แถว"
@@ -162,18 +156,32 @@
 
         <Spinner
             android:id="@+id/row"
-            android:layout_width="100dp"
+            android:layout_width="110dp"
             android:layout_height="55dp"
             android:layout_below="@+id/textView2"
             android:layout_gravity="center"
-            android:layout_marginStart="12dp"
-            android:layout_marginLeft="12dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="7dp"
             android:layout_toEndOf="@+id/slotvalue1"
             android:layout_toRightOf="@+id/slotvalue1"
             android:background="@color/spinner"
             android:entries="@array/row"
             android:textAlignment="center" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="4dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/textrecorder"
+            android:textSize="15dp">
+
+        </TextView>
     </RelativeLayout>
 
     <RelativeLayout

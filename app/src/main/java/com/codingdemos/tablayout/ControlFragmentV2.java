@@ -2,17 +2,18 @@ package com.codingdemos.tablayout;
 
 import android.app.Notification;
 import android.app.NotificationManager;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.NotificationCompat;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.widget.Button;
+import android.widget.RemoteViews;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,11 +22,10 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
 import java.util.Map;
-
 import static android.content.Context.MODE_PRIVATE;
 import static android.content.Context.NOTIFICATION_SERVICE;
+
 
 public class ControlFragmentV2 extends Fragment {
 
@@ -75,6 +75,8 @@ public class ControlFragmentV2 extends Fragment {
                 state.setValue(0);
                 text.setValue("ปิด");
 
+                closewaternotification();
+
             }
         });
 
@@ -86,6 +88,8 @@ public class ControlFragmentV2 extends Fragment {
                 state.setValue(1);
                 text.setValue("เปิด");
 
+                openwaternotification();
+
             }
         });
 
@@ -96,6 +100,8 @@ public class ControlFragmentV2 extends Fragment {
                 DatabaseReference text = refCooling.child("statusCoolingFan");
                 state.setValue(0);
                 text.setValue("ปิด");
+
+                closecoolingfannotification();
             }
         });
 
@@ -106,6 +112,8 @@ public class ControlFragmentV2 extends Fragment {
                 DatabaseReference text = refCooling.child("statusCoolingFan");
                 state.setValue(1);
                 text.setValue("เปิด");
+
+                opencoolingfannotification();
             }
         });
 
@@ -116,6 +124,8 @@ public class ControlFragmentV2 extends Fragment {
                 DatabaseReference text = refHeating.child("statusHeatingFan");
                 state.setValue(0);
                 text.setValue("ปิด");
+
+                closeheatingnotification();
             }
         });
 
@@ -126,6 +136,8 @@ public class ControlFragmentV2 extends Fragment {
                 DatabaseReference text = refHeating.child("statusHeatingFan");
                 state.setValue(1);
                 text.setValue("เปิด");
+
+                openheatingnotification();
             }
         });
 
@@ -188,6 +200,116 @@ public class ControlFragmentV2 extends Fragment {
                     .show();
         }
         return  true;
+    }
+
+    //code แจ้งเตือน ปิด-เปิดน้ำ
+    private void closewaternotification(){
+        Notification.InboxStyle style = new Notification.InboxStyle()
+                .setBigContentTitle("แจ้งเตือน")
+                .addLine("ปั๊มน้ำ")
+                .addLine("ปิด");
+
+
+        Notification.Builder builder = new Notification.Builder(getContext())
+                .setSmallIcon(R.drawable.pipes)
+                .setAutoCancel(true)
+
+                .setStyle(style);
+        Notification notif = builder.build();
+        NotificationManager notifMan = ( NotificationManager ) getActivity().getSystemService( getActivity().NOTIFICATION_SERVICE );
+
+
+
+        notifMan.notify(123,notif);
+    }
+    private void openwaternotification() {
+        Notification.InboxStyle style = new Notification.InboxStyle()
+                .setBigContentTitle("แจ้งเตือน")
+                .addLine("ปั๊มน้ำ")
+                .addLine("เปิด");
+
+
+        Notification.Builder builder = new Notification.Builder(getContext())
+                .setSmallIcon(R.drawable.pipes)
+
+                .setAutoCancel(true)
+                .setStyle(style);
+        Notification notif = builder.build();
+        NotificationManager notifMan = ( NotificationManager ) getActivity().getSystemService( getActivity().NOTIFICATION_SERVICE );
+
+        notifMan.notify(123,notif);
+    }
+
+    //แจ้งเตือน ปิด-เปิด พัดลม
+
+    private void closecoolingfannotification() {
+        Notification.InboxStyle style1 = new Notification.InboxStyle()
+                .setBigContentTitle("แจ้งเตือน")
+                .addLine("พัดลม")
+                .addLine("ปิด");
+
+
+        Notification.Builder builder1 = new Notification.Builder(getContext())
+                .setSmallIcon(R.drawable.coolingfan1)
+
+                .setStyle(style1);
+        Notification noti1 = builder1.build();
+        NotificationManager notifMan1 = (NotificationManager) getActivity().getSystemService(getActivity().NOTIFICATION_SERVICE);
+
+        notifMan1.notify(100,noti1);
+    }
+
+    private void opencoolingfannotification() {
+        Notification.InboxStyle style2 = new Notification.InboxStyle()
+                .setBigContentTitle("แจ้งเตือน")
+                .addLine("พัดลม")
+                .addLine("เปิด");
+
+
+        Notification.Builder builder2 = new Notification.Builder(getContext())
+                .setSmallIcon(R.drawable.coolingfan1)
+
+                .setStyle(style2);
+        Notification noti1 = builder2.build();
+        NotificationManager notifMan1 = (NotificationManager) getActivity().getSystemService(getActivity().NOTIFICATION_SERVICE);
+
+        notifMan1.notify(100,noti1);
+    }
+
+    //แจ้งเตือน ปิด-เปิด heating
+
+    private void closeheatingnotification() {
+        Notification.InboxStyle style3 = new Notification.InboxStyle()
+                .setBigContentTitle("แจ้งเตือน")
+                .addLine("พัดลม")
+                .addLine("ปิด");
+
+
+        Notification.Builder builder3 = new Notification.Builder(getContext())
+                .setSmallIcon(R.drawable.heating)
+
+                .setStyle(style3);
+        Notification noti2 = builder3.build();
+        NotificationManager notifMan2 = (NotificationManager) getActivity().getSystemService(getActivity().NOTIFICATION_SERVICE);
+
+        notifMan2.notify(200,noti2);
+    }
+
+    private void openheatingnotification() {
+        Notification.InboxStyle style3 = new Notification.InboxStyle()
+                .setBigContentTitle("แจ้งเตือน")
+                .addLine("พัดลม")
+                .addLine("เปิด");
+
+
+        Notification.Builder builder3 = new Notification.Builder(getContext())
+                .setSmallIcon(R.drawable.heating)
+
+                .setStyle(style3);
+        Notification noti2 = builder3.build();
+        NotificationManager notifMan2 = (NotificationManager) getActivity().getSystemService(getActivity().NOTIFICATION_SERVICE);
+
+        notifMan2.notify(200,noti2);
     }
 
 

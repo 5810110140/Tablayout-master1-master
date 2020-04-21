@@ -11,9 +11,25 @@
     <!-- TODO: Update blank fragment layout -->
 
 
+    <Button
+        android:id="@+id/refesh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="button">
+    </Button>
+
     <com.jjoe64.graphview.GraphView
+        android:id="@+id/graph"
         android:layout_width="match_parent"
         android:layout_height="200dip"
-        android:id="@+id/graph">
+        android:layout_marginTop="6dp">
+
     </com.jjoe64.graphview.GraphView>
+
+    <TextView
+        android:id="@+id/tempcurrent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#F1EEEE"
+        android:text="TextView" />
 </LinearLayout>

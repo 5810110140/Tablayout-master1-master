@@ -74,11 +74,11 @@ public class MainActivity extends AppCompatActivity {
             startActivity(harvest);
             return true;
         }
-        else if (id == R.id.row_the_box){
+      /*  else if (id == R.id.row_the_box){
             Intent row = new Intent(MainActivity.this,Row_inthe_box.class);
             startActivity(row);
             return  true;
-        }
+        }*/
 
 
         return MainActivity.super.onOptionsItemSelected(item);
@@ -134,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
 
         pageAdapter = new PageAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(pageAdapter);
-        showNotication();
+        //showNotication();
 
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -186,7 +186,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    private void showNotication() {
+   /* private void showNotication() {
         Notification.InboxStyle style = new Notification.InboxStyle()
                 .setBigContentTitle("แจ้งเตือน")
                 .addLine("ระดับน้้ำน้อยกว่ากำหนด")
@@ -199,9 +199,8 @@ public class MainActivity extends AppCompatActivity {
         Notification notif = builder.build();
         NotificationManager notifMan =
                 (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
-
         notifMan.notify(123, notif);
-    }
+    }*/
 
 
 }

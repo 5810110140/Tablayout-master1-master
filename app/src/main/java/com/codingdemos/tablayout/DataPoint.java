@@ -5,7 +5,7 @@ import com.jjoe64.graphview.series.DataPointInterface;
 import java.io.Serializable;
 import java.util.Date;
 
-public class DataPoint  {
+public class DataPoint implements DataPointInterface {
 
     private double x;
     private double y;
