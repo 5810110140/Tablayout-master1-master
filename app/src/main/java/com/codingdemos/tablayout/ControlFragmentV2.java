@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v4.app.NotificationCompat;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -212,11 +213,14 @@ public class ControlFragmentV2 extends Fragment {
 
         Notification.Builder builder = new Notification.Builder(getContext())
                 .setSmallIcon(R.drawable.pipes)
+
                 .setAutoCancel(true)
 
                 .setStyle(style);
         Notification notif = builder.build();
         NotificationManager notifMan = ( NotificationManager ) getActivity().getSystemService( getActivity().NOTIFICATION_SERVICE );
+
+
 
 
 
