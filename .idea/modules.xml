@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/NewGithubproject.iml" filepath="$PROJECT_DIR$/NewGithubproject.iml" group="NewGithubproject" />
-      <module fileurl="file://$PROJECT_DIR$/app/NewGithubproject-app.iml" filepath="$PROJECT_DIR$/app/NewGithubproject-app.iml" group="NewGithubproject/app" />
       <module fileurl="file://$PROJECT_DIR$/Projectmushroom.iml" filepath="$PROJECT_DIR$/Projectmushroom.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
