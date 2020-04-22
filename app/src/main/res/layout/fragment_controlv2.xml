@@ -17,18 +17,6 @@
         android:layout_marginTop="8dp"
         >
 
-        <Button
-            android:id="@+id/Btn_waterON"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="87dp"
-            android:layout_marginLeft="87dp"
-            android:layout_marginTop="21dp"
-            android:layout_toEndOf="@+id/textwaterpipe"
-            android:layout_toRightOf="@+id/textwaterpipe"
-            android:text="เปิด" />
-
         <ImageView
             android:id="@+id/picpipe"
             android:layout_width="60dp"
@@ -52,7 +40,7 @@
             android:layout_marginTop="39dp"
             android:layout_toEndOf="@+id/picpipe"
             android:layout_toRightOf="@+id/picpipe"
-            android:text="Waterpipe"
+            android:text="ปั้มน้ำ"
             android:textAlignment="center"
             android:textColor="#000000"
             android:textSize="20dp" />
@@ -62,12 +50,24 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="17dp"
-            android:layout_marginLeft="17dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginLeft="60dp"
             android:layout_marginTop="21dp"
             android:layout_toEndOf="@+id/textwaterpipe"
             android:layout_toRightOf="@+id/textwaterpipe"
             android:text="ปิด" />
+
+        <Button
+            android:id="@+id/Btn_waterON"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="130dp"
+            android:layout_marginLeft="130dp"
+            android:layout_marginTop="21dp"
+            android:layout_toEndOf="@+id/textwaterpipe"
+            android:layout_toRightOf="@+id/textwaterpipe"
+            android:text="เปิด" />
 
 
     </RelativeLayout>
@@ -85,9 +85,9 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="83dp"
-            android:layout_marginLeft="83dp"
-            android:layout_marginTop="22dp"
+            android:layout_marginStart="127dp"
+            android:layout_marginLeft="127dp"
+            android:layout_marginTop="23dp"
             android:layout_toEndOf="@+id/textcoolingfan"
             android:layout_toRightOf="@+id/textcoolingfan"
             android:text="เปิด" />
@@ -97,9 +97,9 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="12dp"
-            android:layout_marginLeft="12dp"
-            android:layout_marginTop="22dp"
+            android:layout_marginStart="56dp"
+            android:layout_marginLeft="56dp"
+            android:layout_marginTop="23dp"
             android:layout_toEndOf="@+id/textcoolingfan"
             android:layout_toRightOf="@+id/textcoolingfan"
             android:text="ปิด" />
@@ -126,7 +126,7 @@
             android:layout_marginTop="41dp"
             android:layout_toEndOf="@+id/piccoolingfan"
             android:layout_toRightOf="@+id/piccoolingfan"
-            android:text="Coolingfan"
+            android:text="พัดลม"
             android:textAlignment="center"
             android:textColor="#000000"
             android:textSize="20dp" />
@@ -146,8 +146,8 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="107dp"
-            android:layout_marginLeft="107dp"
+            android:layout_marginStart="101dp"
+            android:layout_marginLeft="101dp"
             android:layout_marginTop="19dp"
             android:layout_toEndOf="@+id/textheater"
             android:layout_toRightOf="@+id/textheater"
@@ -158,8 +158,8 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="39dp"
-            android:layout_marginLeft="39dp"
+            android:layout_marginStart="33dp"
+            android:layout_marginLeft="33dp"
             android:layout_marginTop="21dp"
             android:layout_toEndOf="@+id/textheater"
             android:layout_toRightOf="@+id/textheater"
@@ -182,13 +182,13 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_gravity="center_horizontal"
-            android:gravity="center"
-            android:layout_marginStart="24dp"
-            android:layout_marginLeft="24dp"
-            android:layout_marginTop="38dp"
+            android:layout_marginStart="22dp"
+            android:layout_marginLeft="22dp"
+            android:layout_marginTop="26dp"
             android:layout_toEndOf="@id/heater"
             android:layout_toRightOf="@id/heater"
-            android:text="Heating"
+            android:gravity="center"
+            android:text="แผ่นนำ\nความร้อน"
             android:textAlignment="center"
             android:textColor="#000000"
             android:textSize="20dp" />
@@ -197,7 +197,55 @@
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+        android:background="#DFF2FA">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="36dp"
+            android:layout_marginLeft="36dp"
+            android:layout_marginTop="20dp"
+            android:text="โหมดอัตโนมัติ"
+            android:textColor="#000000"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/btn_AutoOff"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="223dp"
+            android:layout_marginLeft="223dp"
+            android:layout_marginTop="4dp"
+            android:text="ปิด"/>
+
+        <Button
+            android:id="@+id/btn_AutoOn"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="292dp"
+            android:layout_marginLeft="292dp"
+            android:layout_marginTop="5dp"
+            android:text="เปิด"
+        />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
         android:orientation="horizontal"
         android:background="#DFF2FA"
         android:layout_marginTop="8dp" >
@@ -209,10 +257,10 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="244dp"
-            android:layout_marginLeft="244dp"
-            android:layout_marginTop="98dp"
-            android:text="ค่าการทำงาน"
+            android:layout_marginStart="348dp"
+            android:layout_marginLeft="348dp"
+            android:layout_marginTop="63dp"
+            android:text="--"
             android:textColor="#000000"
             android:textSize="20dp" />
 
@@ -223,10 +271,10 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="242dp"
-            android:layout_marginLeft="242dp"
-            android:layout_marginTop="59dp"
-            android:text="ค่าการทำงาน"
+            android:layout_marginStart="306dp"
+            android:layout_marginLeft="306dp"
+            android:layout_marginTop="14dp"
+            android:text="--"
             android:textColor="#000000"
             android:textSize="20dp" />
 
@@ -236,38 +284,25 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="21dp"
-            android:text="สถานะการณ์ทำงานปั้มน้ำ"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="16dp"
+            android:text="ปั้มน้ำ"
             android:textColor="#000000"
-            android:textSize="20dp"/>
+            android:textSize="20dp" />
 
         <TextView
             android:id="@+id/state_waterpump"
+            style="@style/TextAppearance.Compat.Notification.Title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="243dp"
-            android:layout_marginLeft="243dp"
-            android:layout_marginTop="21dp"
-            android:text="ค่าการทำงาน"
-            android:textColor="#000000"
-            android:textSize="20dp"
-            style="@style/TextAppearance.Compat.Notification.Title"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="59dp"
-            android:text="สถานะการณ์ทำงานพัดลม"
+            android:layout_marginStart="109dp"
+            android:layout_marginLeft="109dp"
+            android:layout_marginTop="16dp"
+            android:text="--"
             android:textColor="#000000"
             android:textSize="20dp" />
 
@@ -277,10 +312,53 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="99dp"
-            android:text="สถานะการณ์ทำงาน"
+            android:layout_marginStart="200dp"
+            android:layout_marginLeft="200dp"
+            android:layout_marginTop="14dp"
+            android:text="พัดลม"
+            android:textColor="#000000"
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="206dp"
+            android:layout_marginLeft="206dp"
+            android:layout_marginTop="62dp"
+            android:text="แผ่นความร้อน"
+            android:textColor="#000000"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/textstateauto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="61dp"
+            android:text="โหมดอัตโนมัติ"
+            android:textColor="#000000"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/state_auto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="161dp"
+            android:layout_marginLeft="161dp"
+            android:layout_marginTop="61dp"
+            android:layout_toEndOf="@+id/textstateauto"
+            android:layout_toRightOf="@+id/textstateauto"
+            android:text="--"
             android:textColor="#000000"
             android:textSize="20dp" />
 

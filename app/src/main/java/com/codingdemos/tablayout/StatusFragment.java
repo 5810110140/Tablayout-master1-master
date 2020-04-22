@@ -63,9 +63,9 @@ public class StatusFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 //รับค่าจาก Fire base
                 Map map = (Map)dataSnapshot.getValue();
-                Map map1 = (Map)dataSnapshot.child("Valuetemp1").getValue();
-               String temp = String.valueOf(map1.get("temp"));
-               String humid = String.valueOf(map1.get("humid"));
+                Map map1 = (Map)dataSnapshot.child("RealtimeDHT").getValue();
+               String temp = String.valueOf(map1.get("Temperature"));
+               String humid = String.valueOf(map1.get("Humidity"));
                String light = String.valueOf(map1.get("light"));
 
 

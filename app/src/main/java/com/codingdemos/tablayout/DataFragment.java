@@ -11,10 +11,13 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import android.support.v4.app.FragmentActivity;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -35,97 +38,35 @@ import lecho.lib.hellocharts.model.PointValue;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class DataFragment extends Fragment {
+public class DataFragment extends Fragment{
 
- //   private GraphView mGtaphView;
+private WebView webView;
 
-  //  private LineGraphSeries<DataPoint> mTempSeries;
-  //  private LineGraphSeries<DataPoint> mHumidSeries;
-
-
- //   Button refeshs;
- //   FirebaseDatabase database;
- //   DatabaseReference reference;
- //   LineGraphSeries series;
- //   TextView tempcurr;
- //   SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss");
-
-  /*  @Override
+   @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         setHasOptionsMenu(true);
         View rootview = inflater.inflate(R.layout.fragment_data,container,false);
-        mGtaphView =  rootview.findViewById(R.id.graph);
-        series = new LineGraphSeries();
-        mGtaphView.addSeries(series);
-        refeshs = rootview.findViewById(R.id.refesh);
-        database = FirebaseDatabase.getInstance();
-        tempcurr = rootview.findViewById(R.id.tempcurrent);
-        reference = database.getReference("logDevice01");
 
-       // setListener();
 
-        mGtaphView.getGridLabelRenderer().setLabelFormatter(new DefaultLabelFormatter(){
-            @Override
-            public String formatLabel(double value,boolean isValueX) {
+       webView = (WebView) rootview.findViewById(R.id.webview);
+       webView.setWebViewClient(new WebViewClient());
+       webView.loadUrl("https://fireboard.xyz/show--M-6fHtc6317bdxQMMy5.html?fbclid=IwAR0ddOkSP8bySy5LRwbHvrZYJQoTH5xsHVw8IZWMLqdRwlgJmBjmDw1lkYI");
 
-                if(isValueX){
-                    return sdf.format(new Date((long) value));
-                }
-                else {
-                    return super.formatLabel(value,isValueX);
-                }
-            }
-        });
-
+       WebSettings webSettings = webView.getSettings();
+       webSettings.setJavaScriptEnabled(true);
 
 
         return rootview;
-    }*/
+    }
 
 
-  /*  private void setListener(){
-        refeshs.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String id = reference.push().getKey();
-                long x =new Date().getTime();
-                int y = Integer.parseInt(tempcurr.getText().toString());
 
-                PointValue pointValue = new PointValue(x,y);
 
-                reference.child(id).setValue(pointValue);
-            }
-        });
-    }*/
 
- /*   @Override
-    public void onStart() {
-        super.onStart();
 
-        reference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                DataPoint[] dp= new DataPoint[(int)dataSnapshot.getChildrenCount()];
-                int index = 0;
 
-                for(DataSnapshot myDataSnapshot : dataSnapshot.getChildren())
-                {
-                    PointValue pointValue = myDataSnapshot.getValue(PointValue.class);
-                    dp[index] = new DataPoint(pointValue.getX(),pointValue.getY());
-                    index++;
-                }
-                series.resetData((DataPointInterface[]) dp);
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-    }*/
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

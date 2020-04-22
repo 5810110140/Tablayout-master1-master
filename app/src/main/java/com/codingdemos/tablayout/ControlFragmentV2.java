@@ -33,8 +33,9 @@ public class ControlFragmentV2 extends Fragment {
     Button WaterOn,WaterOff;
     Button CoolingOn,CoolingOff;
     Button HeatingOn,HeatingOff;
-    TextView StateWater,Statecooling,Stateheating;
-    private DatabaseReference refWater,refCooling,refHeating;
+    Button AutoOn,AutoOff;
+    TextView StateWater,Statecooling,Stateheating,StateAuto;
+    private DatabaseReference refWater,refCooling,refHeating,refAutoMode;
 
 
 
@@ -58,6 +59,13 @@ public class ControlFragmentV2 extends Fragment {
         HeatingOn = rootview.findViewById(R.id.btn_HeatingON);
         refHeating = FirebaseDatabase.getInstance().getReference("Node").child("RELAY3");
         Stateheating = rootview.findViewById(R.id.state_heating);
+
+        AutoOff = rootview.findViewById(R.id.btn_AutoOff);
+        AutoOn = rootview.findViewById(R.id.btn_AutoOn);
+        refAutoMode = FirebaseDatabase.getInstance().getReference("Node").child("WORK");
+        StateAuto = rootview.findViewById(R.id.state_auto);
+
+
 
         //save switch state
       /*  SharedPreferences sharedPreferenceswater_off = getContext().getSharedPreferences("savewater off",MODE_PRIVATE);
@@ -142,6 +150,30 @@ public class ControlFragmentV2 extends Fragment {
             }
         });
 
+        AutoOff.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DatabaseReference state = refAutoMode.child("Auto");
+                DatabaseReference text = refAutoMode.child("statusAuto");
+                state.setValue(0);
+                text.setValue("ปิด");
+
+                closeAutoNotification();
+            }
+        });
+
+        AutoOn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DatabaseReference state = refAutoMode.child("Auto");
+                DatabaseReference text = refAutoMode.child("statusAuto");
+                state.setValue(1);
+                text.setValue("เปิด");
+
+                OpenAutoNotification();
+            }
+        });
+
 
 
         refWater.addValueEventListener(new ValueEventListener() {
@@ -189,6 +221,20 @@ public class ControlFragmentV2 extends Fragment {
             }
         });
 
+        refAutoMode.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Map map = (Map)dataSnapshot.getValue();
+                String statetext = String.valueOf(map.get("statusAuto"));
+                StateAuto.setText(statetext);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
 
         return rootview;
     }
@@ -207,8 +253,8 @@ public class ControlFragmentV2 extends Fragment {
     private void closewaternotification(){
         Notification.InboxStyle style = new Notification.InboxStyle()
                 .setBigContentTitle("แจ้งเตือน")
-                .addLine("ปั๊มน้ำ")
-                .addLine("ปิด");
+                .addLine("ปั๊มน้ำ: ปิด");
+
 
 
         Notification.Builder builder = new Notification.Builder(getContext())
@@ -219,18 +265,13 @@ public class ControlFragmentV2 extends Fragment {
                 .setStyle(style);
         Notification notif = builder.build();
         NotificationManager notifMan = ( NotificationManager ) getActivity().getSystemService( getActivity().NOTIFICATION_SERVICE );
-
-
-
-
-
         notifMan.notify(123,notif);
     }
     private void openwaternotification() {
         Notification.InboxStyle style = new Notification.InboxStyle()
                 .setBigContentTitle("แจ้งเตือน")
-                .addLine("ปั๊มน้ำ")
-                .addLine("เปิด");
+                .addLine("ปั๊มน้ำ: เปิด");
+
 
 
         Notification.Builder builder = new Notification.Builder(getContext())
@@ -249,8 +290,8 @@ public class ControlFragmentV2 extends Fragment {
     private void closecoolingfannotification() {
         Notification.InboxStyle style1 = new Notification.InboxStyle()
                 .setBigContentTitle("แจ้งเตือน")
-                .addLine("พัดลม")
-                .addLine("ปิด");
+                .addLine("พัดลม: ปิด");
+
 
 
         Notification.Builder builder1 = new Notification.Builder(getContext())
@@ -266,8 +307,8 @@ public class ControlFragmentV2 extends Fragment {
     private void opencoolingfannotification() {
         Notification.InboxStyle style2 = new Notification.InboxStyle()
                 .setBigContentTitle("แจ้งเตือน")
-                .addLine("พัดลม")
-                .addLine("เปิด");
+                .addLine("พัดลม :เปิด");
+
 
 
         Notification.Builder builder2 = new Notification.Builder(getContext())
@@ -285,8 +326,8 @@ public class ControlFragmentV2 extends Fragment {
     private void closeheatingnotification() {
         Notification.InboxStyle style3 = new Notification.InboxStyle()
                 .setBigContentTitle("แจ้งเตือน")
-                .addLine("พัดลม")
-                .addLine("ปิด");
+                .addLine("ตัวทำความร้อน: ปิด");
+
 
 
         Notification.Builder builder3 = new Notification.Builder(getContext())
@@ -302,8 +343,8 @@ public class ControlFragmentV2 extends Fragment {
     private void openheatingnotification() {
         Notification.InboxStyle style3 = new Notification.InboxStyle()
                 .setBigContentTitle("แจ้งเตือน")
-                .addLine("พัดลม")
-                .addLine("เปิด");
+                .addLine("ตัวทำความร้อน: เปิด");
+
 
 
         Notification.Builder builder3 = new Notification.Builder(getContext())
@@ -314,6 +355,34 @@ public class ControlFragmentV2 extends Fragment {
         NotificationManager notifMan2 = (NotificationManager) getActivity().getSystemService(getActivity().NOTIFICATION_SERVICE);
 
         notifMan2.notify(200,noti2);
+    }
+
+    //แจ้งเตือน ปิด-เปิด โหมด Auto
+
+    private void closeAutoNotification() {
+        Notification.InboxStyle style = new Notification.InboxStyle()
+                .setBigContentTitle("แจ้งเตือน")
+                .addLine("โหมด อัตโนมัติ : ปิด");
+
+        Notification.Builder builder = new Notification.Builder(getContext())
+                .setSmallIcon(R.drawable.icon_automatic)
+                .setStyle(style);
+        Notification notification = builder.build();
+        NotificationManager notificationManager = (NotificationManager) getActivity().getSystemService(getActivity().NOTIFICATION_SERVICE);
+        notificationManager.notify(300,notification);
+    }
+
+    private void OpenAutoNotification() {
+        Notification.InboxStyle style = new Notification.InboxStyle()
+                .setBigContentTitle("แจ้งเตือน")
+                .addLine("โหมด อัตโนมัติ : เปิด");
+
+        Notification.Builder builder = new Notification.Builder(getContext())
+                .setSmallIcon(R.drawable.icon_automatic)
+                .setStyle(style);
+        Notification notification = builder.build();
+        NotificationManager notificationManager = (NotificationManager) getActivity().getSystemService(getActivity().NOTIFICATION_SERVICE);
+        notificationManager.notify(300,notification);
     }
 
 
