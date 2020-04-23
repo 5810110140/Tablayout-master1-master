@@ -28,13 +28,13 @@
       android:id="@+id/tabstatus"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:text="statusbox" />
+      android:text="status box" />
 
     <android.support.design.widget.TabItem
       android:id="@+id/tabcontrol"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:text="controlbox" />
+      android:text="control box" />
 
     <android.support.design.widget.TabItem
         android:layout_width="wrap_content"

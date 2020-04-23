@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/NewUpdateProject.iml" filepath="$PROJECT_DIR$/NewUpdateProject.iml" group="NewUpdateProject" />
+      <module fileurl="file://$PROJECT_DIR$/app/NewUpdateProject-app.iml" filepath="$PROJECT_DIR$/app/NewUpdateProject-app.iml" group="NewUpdateProject/app" />
       <module fileurl="file://$PROJECT_DIR$/Projectmushroom.iml" filepath="$PROJECT_DIR$/Projectmushroom.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
