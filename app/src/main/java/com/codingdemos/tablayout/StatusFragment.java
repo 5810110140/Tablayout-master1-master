@@ -30,9 +30,9 @@ import java.util.Map;
  */
 public class StatusFragment extends Fragment {
 
-    private TextView temperaturevalue;
-    private TextView humidityvalue;
-    private TextView lightvalue;
+    private TextView temperaturevalue,Tleveltemp;
+    private TextView humidityvalue,Tlevelhumid;
+    private TextView lightvalue,Tlevellight;
     private DatabaseReference tempRef;
 
 
@@ -48,8 +48,13 @@ public class StatusFragment extends Fragment {
 
 
         humidityvalue = rootView.findViewById(R.id.datahumidity);
+        Tlevelhumid = rootView.findViewById(R.id.textlevelhumiditiy);
+
          temperaturevalue= rootView.findViewById(R.id.datatemperature);
+         Tleveltemp = rootView.findViewById(R.id.textleveltemp);
+
          lightvalue = rootView.findViewById(R.id.datalight);
+         Tlevellight = rootView.findViewById(R.id.textlevellight);
 
         //get value from firebase อ่านค่าจากไฟล์ Firebase
         FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -65,14 +70,27 @@ public class StatusFragment extends Fragment {
                 Map map = (Map)dataSnapshot.getValue();
                 Map map1 = (Map)dataSnapshot.child("RealtimeDHT").getValue();
                String temp = String.valueOf(map1.get("Temperature"));
+               String leveltemp = String.valueOf(map1.get("statusTemperature"));
+
                String humid = String.valueOf(map1.get("Humidity"));
-               String light = String.valueOf(map1.get("light"));
+               String levelhumid = String.valueOf(map1.get("statusHumidity"));
+
+               String light = String.valueOf(map1.get("LuxRating"));
+               String levellight = String.valueOf(map1.get("statusLuxRating"));
+
+
 
 
                // update UI
                temperaturevalue.setText(temp +"°C");
+               Tleveltemp.setText("ระดับ :"+leveltemp);
+
                humidityvalue.setText(humid +" %RH");
+               Tlevelhumid.setText("ระดับ :"+levelhumid);
+
                lightvalue.setText(light+" Lux");
+               Tlevellight.setText("ระดับ :"+levellight);
+
 
 
             }

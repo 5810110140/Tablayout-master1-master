@@ -19,11 +19,11 @@
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:layout_gravity="center_vertical"
-            android:background="#B0E5F3"
+            android:background="#516E99"
             android:gravity="center_horizontal"
             android:text="บันทึกการเก็บเห็ด"
             android:textAlignment="center"
-            android:textColor="#000000"
+            android:textColor="#F7F2F2"
             android:textSize="35sp" />
 
     </RelativeLayout>

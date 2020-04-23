@@ -41,8 +41,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="100sp"
-        android:background="#DFF2FA"
+        android:layout_height="120dp"
+        android:background="#FDFDFD"
         android:layout_marginTop="6dp"
         android:orientation="horizontal">
 
@@ -73,17 +73,18 @@
         <TextView
             android:id="@+id/datatemperature"
             android:layout_width="140dp"
-            android:layout_height="match_parent"
+            android:layout_height="80dp"
             android:layout_alignParentTop="true"
             android:layout_gravity="center_horizontal"
-            android:layout_marginStart="15dp"
-            android:layout_marginLeft="15dp"
+            android:layout_marginStart="22dp"
+            android:layout_marginLeft="22dp"
+            android:layout_marginTop="10dp"
             android:layout_toEndOf="@+id/temperaturepic"
             android:layout_toRightOf="@+id/temperaturepic"
             android:autoSizeTextType="uniform"
             android:gravity="center"
             android:text="--"
-            android:textSize="35sp" />
+            android:textSize="30sp" />
 
         <!--<TextView
            android:layout_width="wrap_content"
@@ -97,12 +98,23 @@
            android:text="°C"
            android:textColor="	#000000"
            android:textSize="50dp" /> -->
+
+        <TextView
+            android:id="@+id/textleveltemp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="91dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="#686565"
+            android:text="textleveltemp"></TextView>
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:background="#DFF2FA"
-        android:layout_height="100dp"
+        android:background="#FDFDFD"
+        android:layout_height="120dp"
         android:layout_marginTop="6dp">
 
         <ImageView
@@ -132,18 +144,18 @@
         <TextView
             android:id="@+id/datahumidity"
             android:layout_width="140dp"
-            android:layout_height="match_parent"
+            android:layout_height="80dp"
             android:layout_alignParentTop="true"
-            android:layout_centerVertical="true"
             android:layout_gravity="center"
-            android:layout_marginStart="15dp"
-            android:layout_marginLeft="15dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="8dp"
             android:layout_toEndOf="@+id/humiditytext"
             android:layout_toRightOf="@+id/humiditytext"
             android:autoSizeTextType="uniform"
             android:gravity="center"
             android:text="--"
-            android:textSize="35sp" />
+            android:textSize="30sp" />
 
         <!--  <TextView
               android:layout_width="63dp"
@@ -158,14 +170,26 @@
               android:text="%RH"
               android:textColor="	#000000"
               android:textSize="30dp" /> -->
+        <TextView
+            android:id="@+id/textlevelhumiditiy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="91dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="#686565"
+            android:text="textlevelhumidity">
+
+        </TextView>
 
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="120dp"
         android:orientation="horizontal"
-        android:background="#DFF2FA"
+        android:background="#FDFDFD"
         android:layout_marginTop="6dp">
 
         <ImageView
@@ -195,18 +219,31 @@
         <TextView
             android:id="@+id/datalight"
             android:layout_width="140dp"
-            android:layout_height="match_parent"
+            android:layout_height="80dp"
             android:layout_alignParentTop="true"
             android:layout_gravity="center_horizontal"
-            android:layout_marginStart="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="-3dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="12dp"
             android:layout_toEndOf="@+id/textlight"
             android:layout_toRightOf="@+id/textlight"
             android:autoSizeTextType="uniform"
             android:gravity="center"
             android:text="--"
-            android:textSize="35dp" />
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/textlevellight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="91dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="#686565"
+            android:text="textlevellight">
+
+        </TextView>
 
     </RelativeLayout>
 

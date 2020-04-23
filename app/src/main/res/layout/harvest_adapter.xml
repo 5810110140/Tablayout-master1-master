@@ -98,7 +98,7 @@
                 android:layout_marginTop="3dp"
                 android:gravity="center"
                 android:textColor="#F7F3F3"
-                android:background="#023F30"
+                android:background="#516E99"
                 android:text="วัน/เดือน/ปี"
                 android:textSize="15sp"/>
 
@@ -113,7 +113,7 @@
                 android:layout_marginStart="110dp"
                 android:layout_marginLeft="110dp"
                 android:layout_marginTop="3dp"
-                android:background="#023F30"
+                android:background="#516E99"
                 android:gravity="left"
                 android:text="วันที่"
 

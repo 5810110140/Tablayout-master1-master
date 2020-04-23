@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#E9F2FA"
+    android:background="#F3F4F8"
     tools:context="com.codingdemos.tablayout.Recorder1"
     android:id="@+id/recorder_insert">
 
@@ -17,7 +17,7 @@
             android:text="บันทึกการเพราะปลูก"
             android:gravity="center_horizontal"
             android:textAlignment="center"
-            android:background="#022217"
+            android:background="#516E99"
             android:textColor="#FCF7F7"
             android:textSize="35sp"/>
 
@@ -39,6 +39,7 @@
             android:layout_marginLeft="41dp"
             android:layout_marginTop="13dp"
             android:text="ชนิดเห็ด"
+            android:textColor="#000000"
             android:textSize="20sp" />
 
         <TextView
@@ -49,8 +50,7 @@
             android:layout_marginStart="37dp"
             android:layout_marginLeft="37dp"
             android:layout_marginTop="12dp"
-
-
+            android:textColor="#000000"
             android:layout_toEndOf="@+id/mushtype1"
             android:layout_toRightOf="@+id/mushtype1"
             android:text="จำนวนก้อน"
@@ -109,6 +109,7 @@
             android:layout_toRightOf="@+id/textdate"
             android:gravity="center"
             android:text="Time"
+            android:textColor="#000000"
             android:textAlignment="center"
             android:textSize="20sp" />
         <TextView
@@ -123,6 +124,7 @@
             android:layout_marginTop="21dp"
             android:gravity="center"
             android:text="Date"
+            android:textColor="#000000"
             android:textAlignment="center"
             android:textSize="20sp" />
 
@@ -152,6 +154,7 @@
             android:layout_toEndOf="@+id/slotvalue1"
             android:layout_toRightOf="@+id/slotvalue1"
             android:text="แถว"
+            android:textColor="#000000"
             android:textSize="20sp" />
 
         <Spinner
@@ -179,6 +182,7 @@
             android:layout_marginLeft="4dp"
             android:layout_marginBottom="8dp"
             android:text="@string/textrecorder"
+            android:textColor="#000000"
             android:textSize="15dp">
 
         </TextView>
