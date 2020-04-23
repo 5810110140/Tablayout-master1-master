@@ -22,7 +22,9 @@
         android:layout_marginBottom="0dp"
         android:text="@string/oystermushroom"
         android:textAlignment="center"
-        android:textColor="#000000"
+            android:gravity="center_horizontal"
+        android:textColor="#FFFFFF"
+            android:background="#516E99"
         android:textSize="30sp" />
     </RelativeLayout>
 
@@ -46,6 +48,7 @@
 
         <TextView
             android:layout_width="340sp"
+            android:textColor="#000000"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"

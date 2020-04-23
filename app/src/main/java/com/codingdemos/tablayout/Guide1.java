@@ -62,16 +62,16 @@ public class Guide1 extends AppCompatActivity {
                     startActivity(mush6);
 
                 }
-                else if (Mushroom7 == position){
+              /*  else if (Mushroom7 == position){
                     Intent mush7 = new Intent(Guide1.this,mushroom7.class);
                     startActivity(mush7);
 
-                }
-                else if (Mushroom8 == position){
+                }*/
+              /*  else if (Mushroom8 == position){
                     Intent mush8 = new Intent(Guide1.this,mushroom8.class);
                     startActivity(mush8);
 
-                }
+                }*/
 
             }
 
