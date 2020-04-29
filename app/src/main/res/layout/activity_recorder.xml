@@ -14,7 +14,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="บันทึกการเพราะปลูก"
+            android:text="บันทึกการเพาะปลูก"
             android:gravity="center_horizontal"
             android:textAlignment="center"
             android:background="#516E99"

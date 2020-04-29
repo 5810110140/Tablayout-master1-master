@@ -290,7 +290,7 @@ public class ControlFragmentV2 extends Fragment {
     private void closecoolingfannotification() {
         Notification.InboxStyle style1 = new Notification.InboxStyle()
                 .setBigContentTitle("แจ้งเตือน")
-                .addLine("พัดลม: ปิด");
+                .addLine("พัดลมระบาย: ปิด");
 
 
 
@@ -307,7 +307,7 @@ public class ControlFragmentV2 extends Fragment {
     private void opencoolingfannotification() {
         Notification.InboxStyle style2 = new Notification.InboxStyle()
                 .setBigContentTitle("แจ้งเตือน")
-                .addLine("พัดลม :เปิด");
+                .addLine("พัดลมระบาย :เปิด");
 
 
 
@@ -326,7 +326,7 @@ public class ControlFragmentV2 extends Fragment {
     private void closeheatingnotification() {
         Notification.InboxStyle style3 = new Notification.InboxStyle()
                 .setBigContentTitle("แจ้งเตือน")
-                .addLine("ตัวทำความร้อน: ปิด");
+                .addLine("พัดลมดูดความ: ปิด");
 
 
 
@@ -343,7 +343,7 @@ public class ControlFragmentV2 extends Fragment {
     private void openheatingnotification() {
         Notification.InboxStyle style3 = new Notification.InboxStyle()
                 .setBigContentTitle("แจ้งเตือน")
-                .addLine("ตัวทำความร้อน: เปิด");
+                .addLine("พัดลมดูดความ: เปิด");
 
 
 
